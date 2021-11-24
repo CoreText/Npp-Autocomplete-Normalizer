@@ -35,7 +35,6 @@ function xmlToArray(array $arr): array {
  * @return void
  */
 function array2xml($data, &$xml_data) {
-    //static $subnode;
     static $overload;
 
     foreach ($data as $key => $value) {
@@ -119,7 +118,6 @@ function normilizeKeyWordElement(array $keyWords): array {
         }
     }
 
-    //return $keyWords;
     return arrayUnique($keyWords, static function (array $element) {
         return $element['@attributes']['name'];
     });
@@ -144,7 +142,13 @@ function arrayUnique(array $array, callable $callback): array {
     return array_values($unique_array);
 }
 
-
+/**
+ * Will be used to check the difference.
+ * 
+ * @param $array1
+ * @param $array2
+ * @return string
+ */
 function arrayMultiDiff($array1, $array2) {
     $result = [];
 
@@ -180,8 +184,8 @@ function otherDecoratedDiff(string $old, string $new): array {
     $oldDiff = substr($old, $fromStart, $oldEnd - $fromStart);
 
     return [
-        'old' => "<code class='code language-xml left' contenteditable='true'>$start<span class='cb-red'>$oldDiff</span>$end</code>",
-        'new' => "<code class='code language-xml right' contenteditable='true'>$start<span class='cb-green'>$newDiff</span>$end</div>",
+        'old' => "<code class='code language-xml left' spellcheck='false' contenteditable='true'>$start<span class='cb-red'>$oldDiff</span>$end</code>",
+        'new' => "<code class='code language-xml right' spellcheck='false' contenteditable='true'>$start<span class='cb-green'>$newDiff</span>$end</div>",
     ];
 }
 
@@ -194,12 +198,10 @@ function otherDecoratedDiff(string $old, string $new): array {
  */
 function getDecoratedDiff(string $old, string $new): array {
     return [
-        'old' => "<textarea class='left'  id='left' contenteditable='true'>$old</textarea>",
-        'new' => "<textarea class='right' id='right' contenteditable='true'>$new</textarea>",
+        'old' => "<textarea class='left'  id='left' spellcheck='false' contenteditable='true'>$old</textarea>",
+        'new' => "<textarea class='right' id='right' spellcheck='false' contenteditable='true'>$new</textarea>",
     ];
 }
-
-
 
 /**
  * Render the diff.
@@ -241,6 +243,12 @@ $styles
 DIFF;
 }
 
+/**
+ * Status message of the parsed XML.
+ * 
+ * @param $isValidXml
+ * @return string
+ */
 function isValidMessage($isValidXml) {
     if ($isValidXml) {
         return '<h1 class="special-header noselect cb-green">The XML is valid: ' . print_r($isValidXml, true) . '!</h1>';
@@ -269,16 +277,18 @@ function css() {
         padding: 1em 0;
         border: 1px solid lightgrey;
         margin: 1em 0;
+        overflow-x: hidden;
     }
     .diff-table {
         width: 100%;
         table-layout: fixed;
         border-collapse: collapse;
         word-wrap: break-word;
-        overflow: auto;
+        overflow: scroll;
     }
     .diff-table-cell {
         vertical-align: baseline;
+        overflow: scroll;
     }
     .right, .left,
     .overflow { overflow: scroll; }
@@ -343,9 +353,5 @@ function dd($var, $die=true) {
     echo '</pre>';
 
     if ($die) die();
-    else echo '============<br>';
+    else echo "============<br>\n";
 }
-
-/*
-php ..\index.php
-*/
