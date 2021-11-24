@@ -1,0 +1,101 @@
+body {
+  font-family: Consolas, Arial, sans-serif;
+  padding-top: 0 0 2rem 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse; 
+}
+
+table tr {
+    box-shadow: -1px 6px 4px 2px #d9d9d9;
+    top: -10px;
+}
+
+th, td {
+  padding: 0.25rem;
+}
+
+tr.red th {
+  background: red;
+  color: white;
+}
+
+tr.green th {
+  background: green;
+  color: white;
+}
+
+tr.purple th {
+  background: purple;
+  color: white;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  padding: 1em;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 20px 18px 2px #d9d9d9;
+  background: white;
+}
+
+.left:focus-visible {
+  outline-color: #ff0202;
+}
+
+.right:focus-visible {
+  outline-color: #01ff01;
+}
+
+.special-header {
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+input[type="button"],
+button,
+.btn {
+  cursor: pointer;
+}
+
+.other-diff,
+.btn {
+  font-weight: bold;
+  text-decoration: none !important;
+  padding: 0.4em 1.2em;
+  border-radius: 3px;
+  color: #000000;
+}
+
+.underline {
+  position: relative;
+}
+
+.underline::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 4px;
+  background-color: #000000;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .underline:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
