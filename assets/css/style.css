@@ -1,6 +1,15 @@
+
+:root {
+    --padding-left-right: 1.2em;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: Consolas, Arial, sans-serif;
-  padding-top: 0 0 2rem 0;
+  padding: 0 0 2rem 0;
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
@@ -9,12 +18,32 @@ body {
 table {
   text-align: left;
   position: relative;
-  border-collapse: collapse; 
+  border-collapse: collapse;
 }
 
 table tr {
-    box-shadow: -1px 6px 4px 2px #d9d9d9;
-    top: -10px;
+  box-shadow: -1px 6px 4px 2px #d9d9d9;
+  top: -10px;
+}
+
+.other-diff .sticky {
+  position: fixed;
+}
+
+#other table tr {
+  width: 50%;
+  position: relative;
+}
+
+#other .sticky-header {
+  display: table-cell;
+  width: 50%;
+  z-index: 10;
+  transition: all .35s ease-in-out;
+}
+
+#other .sticky-header:nth-child(2) {
+  left: 50%;
 }
 
 th, td {
@@ -36,22 +65,39 @@ tr.purple th {
   color: white;
 }
 
-th {
+textarea,
+pre {
+  font: normal 14px Consolas, Arial, sans-serif;
+  background-color: white;
+  color: black;
+}
+
+pre {
+  padding-top: 4em;
+  margin: 0;
+  overflow-x: scroll;
+}
+
+textarea {
+  resize: none;
+}
+
+.sticky-header {
   position: sticky;
   top: 0;
   padding: 1em;
   border-bottom: 1px solid lightgrey;
-  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 20px 18px 2px #d9d9d9;
   background: white;
 }
 
 .left:focus-visible {
   outline-color: #ff0202;
+  z-index: 2;
 }
 
 .right:focus-visible {
   outline-color: #01ff01;
+  z-index: 2;
 }
 
 .special-header {
@@ -59,6 +105,54 @@ th {
   padding-right: 1em;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.cf-white { color: white; }
+.cb-red { background-color: #ff634742; }
+.cb-green { background-color: #adff2f54; }
+.diff {
+  width: 100%;
+  padding: 1em 0;
+  border: 1px solid lightgrey;
+  overflow-x: hidden;
+}
+.diff-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  word-wrap: break-word;
+  overflow: scroll;
+}
+.diff-table-cell {
+  vertical-align: baseline;
+  overflow: scroll;
+}
+.right, .left,
+.overflow { overflow: scroll; }
+.right, .left {
+  width: 100%;
+}
+
+.nav-menu {
+    padding: var(--padding-left-right, 1.2em);
+}
+
+.first {
+  margin-bottom: 4em;
+}
+
+#left, #right {
+  height: 76vh;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 input[type="button"],
@@ -92,10 +186,33 @@ button,
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .underline:hover::before{
+  .underline:hover::before {
     left: 0;
     right: auto;
     width: 100%;
   }
 }
 
+.scrollToTopBtn {
+  /* position: fixed; */
+  opacity: 0;
+  right: 17px;
+  bottom: 1.4em;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1em;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background: lightgrey;
+  color: white;
+  transition: all .35s ease-in-out;
+}
+
+.scrollToTopBtn:hover {
+  background-color: black;
+  color: greenyellow;
+}
+
+.scrollToTopBtn.sticky {
+  opacity: 1;
+}
