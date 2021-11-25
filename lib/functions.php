@@ -144,7 +144,7 @@ function arrayUnique(array $array, callable $callback): array {
 
 /**
  * Will be used to check the difference.
- * 
+ *
  * @param $array1
  * @param $array2
  * @return string
@@ -184,8 +184,8 @@ function otherDecoratedDiff(string $old, string $new): array {
     $oldDiff = substr($old, $fromStart, $oldEnd - $fromStart);
 
     return [
-        'old' => "<code class='code language-xml left' spellcheck='false' contenteditable='true'>$start<span class='cb-red'>$oldDiff</span>$end</code>",
-        'new' => "<code class='code language-xml right' spellcheck='false' contenteditable='true'>$start<span class='cb-green'>$newDiff</span>$end</div>",
+        'old' => "<code class='code language-xml left' spellcheck='false' autocomplete='off' contenteditable='true'>$start<span class='cb-red'>$oldDiff</span>$end</code>",
+        'new' => "<code class='code language-xml right' spellcheck='false' autocomplete='off' contenteditable='true'>$start<span class='cb-green'>$newDiff</span>$end</div>",
     ];
 }
 
@@ -198,8 +198,8 @@ function otherDecoratedDiff(string $old, string $new): array {
  */
 function getDecoratedDiff(string $old, string $new): array {
     return [
-        'old' => "<textarea class='left'  id='left' spellcheck='false' contenteditable='true'>$old</textarea>",
-        'new' => "<textarea class='right' id='right' spellcheck='false' contenteditable='true'>$new</textarea>",
+        'old' => "<textarea class='left'  id='left' spellcheck='false' autocomplete='off' contenteditable='true'>$old</textarea>",
+        'new' => "<textarea class='right' id='right' spellcheck='false' autocomplete='off' contenteditable='true'>$new</textarea>",
     ];
 }
 
@@ -217,7 +217,6 @@ function renderDiff(
     $keyWordsListBefore,
     $keyWordsListAfter
     ): string {
-    $styles = css();
 
     if ($other)
         $diff = getDecoratedDiff($stringOld, $stringNew);
@@ -225,14 +224,11 @@ function renderDiff(
         $diff = otherDecoratedDiff($stringOld, $stringNew);
 
     return <<<DIFF
-<style type="text/css">
-$styles
-</style>
 <div class="diff">
     <table class="diff-table">
         <tr>
-            <th>OLD ($keyWordsListBefore)</th>
-            <th>NEW ($keyWordsListAfter) Normalized Version</th>
+            <th class="sticky-header">OLD ($keyWordsListBefore)</th>
+            <th class="sticky-header">NEW ($keyWordsListAfter) Normalized Version</th>
         </tr>
         <tr>
             <td class="diff-table-cell">{$diff['old']}</td>
@@ -245,106 +241,22 @@ DIFF;
 
 /**
  * Status message of the parsed XML.
- * 
+ *
  * @param $isValidXml
  * @return string
  */
 function isValidMessage($isValidXml) {
-    if ($isValidXml) {
-        return '<h1 class="special-header noselect cb-green">The XML is valid: ' . print_r($isValidXml, true) . '!</h1>';
-    }
-    else {
-        return '<h1 class="special-header cb-red">The XML is not valid!<br><pre>' . print_r($isValidXml, true) . '</pre></h1>';
-    }
+    if ($isValidXml)
+        return '<h1 class="special-header noselect cb-green" id="special-header">The XML is valid: ' . print_r($isValidXml, true) . '!</h1>';
+    else
+        return '<h1 class="special-header cb-red" id="special-header">The XML is not valid!<br><pre>' . print_r($isValidXml, true) . '</pre></h1>';
 }
 
-function escapeXmlForBrowser($xml) {
-    return '<pre>' . htmlspecialchars($xml) . '</pre>';
-}
-
-/**
- * CSS styles.
- *
- * @return string
- */
-function css() {
-    return <<<CSS
-    .cf-white { color: white; }
-    .cb-red { background-color: tomato; }
-    .cb-green { background-color: greenyellow; }
-    .diff {
-        width: 100%;
-        padding: 1em 0;
-        border: 1px solid lightgrey;
-        margin: 1em 0;
-        overflow-x: hidden;
-    }
-    .diff-table {
-        width: 100%;
-        table-layout: fixed;
-        border-collapse: collapse;
-        word-wrap: break-word;
-        overflow: scroll;
-    }
-    .diff-table-cell {
-        vertical-align: baseline;
-        overflow: scroll;
-    }
-    .right, .left,
-    .overflow { overflow: scroll; }
-    .right, .left {
-        width: 100%;
-    }
-    #left, #right {
-        height: 72vh;
-    }
-    .noselect {
-        -webkit-touch-callout: none; /* iOS Safari */
-          -webkit-user-select: none; /* Safari */
-           -khtml-user-select: none; /* Konqueror HTML */
-             -moz-user-select: none; /* Old versions of Firefox */
-              -ms-user-select: none; /* Internet Explorer/Edge */
-                  user-select: none; /* Non-prefixed version, currently
-                                        supported by Chrome, Edge, Opera and Firefox */
-    }
-    input[type="button"],
-    button,
-    .btn {
-      cursor: pointer;
-    }
-
-    .other-diff,
-    .btn {
-      font-weight: bold;
-      text-decoration: none !important;
-      padding: 0.4em 1.2em;
-      border-radius: 3px;
-      color: #000000;
-    }
-
-    .underline {
-      position: relative;
-    }
-
-    .underline::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 0;
-      height: 4px;
-      background-color: #000000;
-      transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .underline:hover::before{
-        left: 0;
-        right: auto;
-        width: 100%;
-      }
-    }
-CSS;
+function escapeXmlForBrowser($xml, $htmlFormat = false) {
+    if ($htmlFormat)
+        return '<pre>' . htmlspecialchars($xml) . '</pre>';
+    
+    return htmlspecialchars($xml);
 }
 
 function dd($var, $die=true) {
