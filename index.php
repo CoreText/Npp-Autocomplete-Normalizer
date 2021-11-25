@@ -23,8 +23,6 @@ $normalized = normilizeKeyWordElement($sortedKeyWordsList);
 $keyWordsListAfter = 'Keywords count after: ' . count($normalized);
 
 // print_r(count($normalized));
-// echo renderDiff();
-
 
 $xmlTemplate = <<<XML_RENDER
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -51,41 +49,21 @@ array2xml($normalized, $xmlData->AutoComplete);
 $isValidXml = (new XmlValidator())->isXMLContentValid($xmlData->asXML(), '1.0', 'UTF-8');
 
 ?>
+<link rel="icon" type="image/png" href="/assets/img/site-logo.png">
+<style type="text/css"><?php include_once('assets/css/style.css') ?></style>
 
 <?php echo isValidMessage($isValidXml) ?>
-<center>
-    <form action="#" onsubmit="return false;">
-        <p>
-            <input type="button" onclick="launch();" value="compute diff">
-        </p>
-    </form>
-    <a class="other-diff underline" href="#other">Other Diff</a>
-</center>
 
-<script type="text/javascript">
-const links = document.querySelectorAll(".other-diff");
-
-for (const link of links) {
-  link.addEventListener("click", clickHandler);
-}
-
-function clickHandler(e) {
-  e.preventDefault();
-  const href = this.getAttribute("href");
-  console.log(href);
-  const offsetTop = document.querySelector(href).offsetTop;
-
-  scroll({
-    top: offsetTop,
-    behavior: "smooth"
-  });
-}
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-</script>
+<section class="nav-menu">
+    <center>
+        <form action="#" onsubmit="return false;">
+            <p>
+                <input type="button" onclick="launch();" value="compute diff">
+            </p>
+        </form>
+        <a class="other-diff underline" href="#other">Other Diff</a>
+    </center>
+</section>
 
 <!--
 <pre>
@@ -96,64 +74,35 @@ echo $keyWordsListAfter  . "\n";
 </pre>
 -->
 
-<?php
+<section class="first" id="first">
+    <div class="outputdiv" id="outputdiv"></div>
+    <?php
 
-$xmlFormatted = formatXml($xmlData);
-$oldXml = escapeXmlForBrowser($xml->asXML());
-$newXml = escapeXmlForBrowser($xmlFormatted);
-echo renderDiff($oldXml, $newXml, true, $keyWordsListBefore, $keyWordsListAfter);
+    $xmlFormatted = formatXml($xmlData);
+    $oldXml = escapeXmlForBrowser($xml->asXML());
+    $newXml = escapeXmlForBrowser($xmlFormatted);
+    echo renderDiff($oldXml, $newXml, true, $keyWordsListBefore, $keyWordsListAfter);
 
-?>
-
-<div class="outputdiv"></div>
-
-<style type="text/css">
-    <?php include_once('assets/css/style.css') ?>
-</style>
-
-<script type="text/javascript" src="assets/js/diff_match_patch.js"></script>
-<script>
-function launch() {
-  var text1 = document.getElementById('left').value;
-  var text2 = document.getElementById('right').value;
-
-  var dmp = new diff_match_patch();
-  dmp.Diff_Timeout = 0;
-
-  // No warmup loop since it risks triggering an 'unresponsive script' dialog
-  // in client-side JavaScript
-  var ms_start = (new Date()).getTime();
-  var d = dmp.diff_main(text1, text2, false);
-  var ms_end = (new Date()).getTime();
-
-  var ds = dmp.diff_prettyHtml(d);
-  document.getElementById('outputdiv').innerHTML = ds + '<BR>Time: ' + (ms_end - ms_start) / 1000 + 's';
-}
-</script>
-
-<section id="other"> 
-<?php
-echo renderDiff($oldXml, $newXml, false, $keyWordsListBefore, $keyWordsListAfter);
-?>
+    ?>
 </section>
 
+<section class="other-diff" id="other">
+    <?php 
+    $oldXml = escapeXmlForBrowser($xml->asXML(), true);
+    $newXml = escapeXmlForBrowser($xmlFormatted, true);
+    echo renderDiff($oldXml, $newXml, false, $keyWordsListBefore, $keyWordsListAfter);
+    ?>
+
+    <!-- Button on fixed on bottom right corner of the page -->
+    <a class="scroll-to scrollToTopBtn" href="#special-header">☝️ TOP</a>
+</section>
+
+
+<!-- SCRIPTS -->
 <!--
 <link rel="stylesheet" href="assets/css/idea.min.css">
 <script src="assets/js/highlight.min.js"></script>
 <script src="assets/js/languages/xml.min.js"></script>
 -->
-<script>
-/*
-hljs.initHighlightingOnLoad();
-if ( typeof oldIE === 'undefined' && Object.keys && typeof hljs !== 'undefined') {
-  hljs.initHighlighting();
-}
-document.querySelectorAll('.code').forEach(el => {
-  hljs.highlightElement(el);
-});
-*/
-</script>
-
-<?php
-
-
+<script type="text/javascript" src="assets/js/diff_match_patch.js"></script>
+<script type="text/javascript"><?php include_once('assets/js/script.js') ?></script>
