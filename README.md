@@ -5,8 +5,8 @@ Used for cleaning Notepad++ autocomplete files `*.xml`, by sorting items, removi
 ## Installation
 
 - Download the archive
-- put your `php.xml` to the `src/` directory
-- Install php7 and run it in the browser
+- put your `php.xml` to the `src/` directory, or replace `php.xml` file's contents withou your own
+- Install php >= php7.1 and run it in the browser, or just run `php index.php`
 
 On the right pane you'll see the normalized version of your autocomplete file.
 
