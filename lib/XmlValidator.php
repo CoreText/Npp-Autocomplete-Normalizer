@@ -6,6 +6,8 @@
  */
 class XmlValidator
 {
+    private $errors = null;
+
     /**
      * @param string $xmlFilename Path to the XML file
      * @param string $version 1.0
@@ -35,9 +37,13 @@ class XmlValidator
         $doc = new DOMDocument($version, $encoding);
         $doc->loadXML($xmlContent);
 
-        $errors = libxml_get_errors();
+        $this->errors = $errors = libxml_get_errors();
         libxml_clear_errors();
 
         return empty($errors);
+    }
+    
+    public function getErrors(): ?array {
+        return $this->errors;
     }
 }

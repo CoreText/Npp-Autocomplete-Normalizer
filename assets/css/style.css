@@ -193,7 +193,7 @@ button,
   }
 }
 
-.scrollToTopBtn {
+.scroll-to-top-btn {
   /* position: fixed; */
   opacity: 0;
   right: 17px;
@@ -208,11 +208,11 @@ button,
   transition: all .35s ease-in-out;
 }
 
-.scrollToTopBtn:hover {
+.scroll-to-top-btn:hover {
   background-color: black;
   color: greenyellow;
 }
 
-.scrollToTopBtn.sticky {
+.scroll-to-top-btn.sticky {
   opacity: 1;
 }

@@ -16,7 +16,7 @@ function clickHandler(e) {
   });
 }
 
-var targets = document.querySelectorAll('.sticky-header, .scrollToTopBtn');
+var targets = document.querySelectorAll('.sticky-header, .scroll-to-top-btn');
 
 ;(function (headers) {
   var stickyFor = document.querySelector('.other-diff'),
@@ -53,7 +53,7 @@ var targets = document.querySelectorAll('.sticky-header, .scrollToTopBtn');
   }
 
   function handleIntersection(entries) {
-    const headers = document.querySelectorAll('.other-diff .sticky-header, .scrollToTopBtn')
+    const headers = document.querySelectorAll('.other-diff .sticky-header, .scroll-to-top-btn')
     entries.map((entry) => {
       for (var header of Array.from(headers)) {
         if (entry.isIntersecting) {

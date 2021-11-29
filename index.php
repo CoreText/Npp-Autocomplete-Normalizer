@@ -1,53 +1,59 @@
 <?php
 
-require('lib/functions.php');
-require('lib/XmlValidator.php');
+require_once('env.php');
+require_once('lib/functions.php');
 
 /*
-SimpleXMLElement
-DOMХpath
+
+php index.php
+php run.php
+
 */
 
-$file = 'src/php.xml';
-if (!file_exists($file)) {
-    exit('Failed to open ' . $file);
+global $autoCompleteEnvironmentAttributes;
+global $fileDist;
+global $xmlTemplate;
+
+if (!file_exists($fileSrc)) {
+    exit('Failed to open ' . $fileSrc);
 }
 
-$xml = simplexml_load_file($file);
+$xml = simplexml_load_file($fileSrc);
 
 $keyWordsList = $xml->xpath('/NotepadPlus/AutoComplete/KeyWord');
+$autoCompleteEnvironment = $xml->xpath('/NotepadPlus/AutoComplete/Environment');
+
+if (is_array($autoCompleteEnvironment) && !empty($autoCompleteEnvironment)) {
+    foreach (($autoCompleteEnvironment[0])->attributes() as $attrKey => $attrVal) {
+        $autoCompleteEnvironmentAttributes[$attrKey] = (string)$attrVal;
+    }
+}
 
 $keyWordsListBefore = 'Keywords count before: ' . count($keyWordsList);
-$sortedKeyWordsList = sortKeyWordsByAttribute(xml2array($keyWordsList));
-$normalized = normilizeKeyWordElement($sortedKeyWordsList);
+$normalized = normalize(xml2array($keyWordsList));
 $keyWordsListAfter = 'Keywords count after: ' . count($normalized);
 
-// print_r(count($normalized));
-
-$xmlTemplate = <<<XML_RENDER
-<?xml version="1.0" encoding="UTF-8" ?>
-<!--
-WordPress AutoComplete for Notepad++
-@author takien - http://takien.com
-@author Texter CoreText
-@version 1.0 (contains about 151 WordPress functions)
-It's mixed with and based on PHP AutoComplete by Geoffray Warnants - http://www.geoffray.be (version 1.35.20100625)
--->
-<NotepadPlus>
-    <AutoComplete>
-    <!--
-    $keyWordsListBefore
-    $keyWordsListAfter
-    -->
-    </AutoComplete>
-</NotepadPlus>
-XML_RENDER;
-
 $xmlData = new SimpleXMLElement($xmlTemplate);
+// $xmlData->AutoComplete->addAttribute('language', 'PHP');
+
+if (!isset($xmlData->AutoComplete->Environment)) {
+    $xmlData->AutoComplete->addChild('Environment');
+}
+
+foreach ($autoCompleteEnvironmentAttributes as $attrKey => $attrVal) {
+    if ($xmlData->AutoComplete->Environment->attributes() === null)
+        $xmlData->AutoComplete->Environment->addAttribute($attrKey, $attrVal);
+    else
+        $xmlData->AutoComplete->Environment->attributes()->{$attrKey} = $attrVal;
+}
+
 array2xml($normalized, $xmlData->AutoComplete);
 
-$isValidXml = (new XmlValidator())->isXMLContentValid($xmlData->asXML(), '1.0', 'UTF-8');
+$validator = new XmlValidator();
+$isValidXml = $validator->isXMLContentValid($xmlData->asXML(), '1.0', 'UTF-8');
 
+$xmlFormatted = formatXml($xmlData, $fileDist);
+file_put_contents($fileDist, $xmlFormatted);
 ?>
 <link rel="icon" type="image/png" href="/assets/img/site-logo.png">
 <style type="text/css"><?php include_once('assets/css/style.css') ?></style>
@@ -65,36 +71,23 @@ $isValidXml = (new XmlValidator())->isXMLContentValid($xmlData->asXML(), '1.0', 
     </center>
 </section>
 
-<!--
-<pre>
-<?php
-echo $keyWordsListBefore . "\n";
-echo $keyWordsListAfter  . "\n";
-?>
-</pre>
--->
-
 <section class="first" id="first">
     <div class="outputdiv" id="outputdiv"></div>
     <?php
-
-    $xmlFormatted = formatXml($xmlData);
     $oldXml = escapeXmlForBrowser($xml->asXML());
     $newXml = escapeXmlForBrowser($xmlFormatted);
     echo renderDiff($oldXml, $newXml, true, $keyWordsListBefore, $keyWordsListAfter);
-
     ?>
 </section>
 
 <section class="other-diff" id="other">
-    <?php 
+    <?php
     $oldXml = escapeXmlForBrowser($xml->asXML(), true);
     $newXml = escapeXmlForBrowser($xmlFormatted, true);
     echo renderDiff($oldXml, $newXml, false, $keyWordsListBefore, $keyWordsListAfter);
     ?>
-
     <!-- Button on fixed on bottom right corner of the page -->
-    <a class="scroll-to scrollToTopBtn" href="#special-header">☝️ TOP</a>
+    <a class="scroll-to scroll-to-top-btn" href="#special-header">☝️ TOP</a>
 </section>
 
 
