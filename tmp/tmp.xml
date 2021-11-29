@@ -1,0 +1,1707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Generated AutoComplete for Notepad++
+@author Texter CoreText - https://github.com/CoreText/Npp-Autocomplete-Normalizer
+@version 1.1
+-->
+<NotepadPlus>
+  <AutoComplete>
+    <Environment ignoreCase="no" startFunc="(" stopFunc=")" paramSeparator="," terminal=";" additionalWordChar=""/>
+    <KeyWord name="absint" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Convert a value to non-negative integer.&amp;#x0A;&amp;#x0A;$maybeint&amp;#x20;Data you wish to have converted to a non-negative integer.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) A non-negative integer.">
+        <Param name="mixed $maybeint"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="activate_plugin" func="yes">
+      <Overload retVal="null|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Attempts activation of plugin in a “sandbox” and redirects on success.&amp;#x0A;&amp;#x0A;$plugin&amp;#x20;Path to the plugin file relative to the plugins directory.&amp;#x0A;&amp;#x0A;$redirect&amp;#x20;URL to redirect to.&amp;#x0A;&amp;#x0A;$network_wide&amp;#x20;Whether to enable the plugin for all sites in the network or just the current&amp;#x0A;&amp;#x09;&amp;#x09;site. Multisite only.&amp;#x0A;&amp;#x0A;$silent&amp;#x20;Whether to prevent calling activation hooks.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(null|WP_Error) Null on success, WP_Error on invalid file.">
+        <Param name="string $plugin"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="activate_plugins" func="yes">
+      <Overload retVal="bool|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Activate multiple plugins.&amp;#x0A;&amp;#x0A;$plugins&amp;#x20;Single plugin or list of plugins to activate.&amp;#x0A;&amp;#x0A;$redirect&amp;#x20;Redirect to page after successful activation.&amp;#x0A;&amp;#x0A;$network_wide&amp;#x20;Whether to enable the plugin for all sites in the network.&amp;#x0A;&amp;#x0A;$silent&amp;#x20;Prevent calling activation hooks.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool|WP_Error) True when finished or WP_Error if there were errors during a plugin activation.">
+        <Param name="string string[] $plugins"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="activate_sitewide_plugin" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deprecated functionality for activating a network-only plugin.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="addslashes_gpc" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Adds slashes to escape strings.&amp;#x0A;&amp;#x0A;$gpc&amp;#x20;The string returned from HTTP request data.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Returns a string escaped with slashes.">
+        <Param name="string $gpc"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="addslashes_strings_only" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Adds slashes only if the provided value is a string.&amp;#x0A;&amp;#x0A;$value&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed)">
+        <Param name="mixed $value"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_action" func="yes">
+      <Overload retVal="true" descr="&amp;#x0A;WP:&amp;#x20;Adds a callback function to an action hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the action to add the callback to.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;The callback to be run when the action is called.&amp;#x0A;&amp;#x0A;$priority&amp;#x20;Used to specify the order in which the functions associated with a particular action&amp;#x0A;&amp;#x09;&amp;#x09;are executed. Lower numbers correspond with earlier execution, and functions with the same priority&amp;#x0A;&amp;#x09;&amp;#x09;are executed in the order in which they were added to the action.&amp;#x0A;&amp;#x0A;$accepted_args&amp;#x20;The number of arguments the function accepts.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true) Always returns true.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_allowed_options" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Adds an array of options to the list of allowed options.&amp;#x0A;&amp;#x0A;$new_options&amp;#x20;&amp;#x0A;&amp;#x0A;$options&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array)">
+        <Param name="array $new_options"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_blog_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Add a new option for a given blog ID.&amp;#x0A;&amp;#x0A;$id&amp;#x20;A blog ID. Can be null to refer to the current blog.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of option to add. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Option value, can be anything. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was added, false otherwise.">
+        <Param name="int $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_clean_index" func="yes">
+      <Overload retVal="true" descr="&amp;#x0A;WP:&amp;#x20;Adds an index to a specified table.&amp;#x0A;&amp;#x0A;$table&amp;#x20;Database table name.&amp;#x0A;&amp;#x0A;$index&amp;#x20;Database table index column.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true) True, when done with execution.">
+        <Param name="string $table"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_comments_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Comments main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_comment_meta" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Add meta data field to a comment.&amp;#x0A;&amp;#x0A;$comment_id&amp;#x20;Comment ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the same key should not be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) Meta ID on success, false on failure.">
+        <Param name="int $comment_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_contextual_help" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add contextual help text for a page.&amp;#x0A;&amp;#x0A;$screen&amp;#x20;The handle for the screen to add help to. This is usually the hook name returned by the&amp;#x0A;&amp;#x09;&amp;#x09;add_*_page() functions.&amp;#x0A;&amp;#x0A;$help&amp;#x20;The content of an 'Overview' help tab.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $screen"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_cssclass" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$add&amp;#x20;&amp;#x0A;&amp;#x0A;$class&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $add"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_custom_background" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add callbacks for background image display.&amp;#x0A;&amp;#x0A;$wp_head_callback&amp;#x20;Call on the 'wp_head' action.&amp;#x0A;&amp;#x0A;$admin_head_callback&amp;#x20;Call on custom background administration screen.&amp;#x0A;&amp;#x0A;$admin_preview_callback&amp;#x20;Output a custom background image div on the custom background&amp;#x0A;&amp;#x09;&amp;#x09;administration screen. Optional.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ callable $wp_head_callback=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_custom_image_header" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add callbacks for image header display.&amp;#x0A;&amp;#x0A;$wp_head_callback&amp;#x20;Call on the 'wp_head' action.&amp;#x0A;&amp;#x0A;$admin_head_callback&amp;#x20;Call on custom header administration screen.&amp;#x0A;&amp;#x0A;$admin_preview_callback&amp;#x20;Output a custom header image div on the custom header administration&amp;#x0A;&amp;#x09;&amp;#x09;screen. Optional.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="callable $wp_head_callback"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_dashboard_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Dashboard main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_editor_style" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds callback for custom TinyMCE editor stylesheets.&amp;#x0A;&amp;#x0A;$stylesheet&amp;#x20;Stylesheet name or array thereof, relative to theme root. Defaults to&amp;#x0A;&amp;#x09;&amp;#x09;'editor-style.css'&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array string $stylesheet='editor-style.css']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_existing_user_to_blog" func="yes">
+      <Overload retVal="true|WP_Error|void" descr="&amp;#x0A;WP:&amp;#x20;Add a user to a blog based on details from maybe_add_existing_user_to_blog().&amp;#x0A;&amp;#x0A;$details&amp;#x20;User details. Must at least contain values for the keys listed below. 'user_id'(int)&amp;#x0A;&amp;#x09;&amp;#x09;The ID of the user being added to the current blog. 'role'(string) The role to be assigned to the&amp;#x0A;&amp;#x09;&amp;#x09;user.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true|WP_Error|void) True on success or a WP_Error object if the user doesn't exist or could not be&amp;#x0A;&amp;#x09;&amp;#x09;added. Void if $details array was not provided.">
+        <Param name="[ array false $details=false]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_feed" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Add a new feed type like /atom1/.&amp;#x0A;&amp;#x0A;$feedname&amp;#x20;Feed name.&amp;#x0A;&amp;#x0A;$function&amp;#x20;Callback to run on feed display.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Feed action name.">
+        <Param name="string $feedname"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_filter" func="yes">
+      <Overload retVal="true" descr="&amp;#x0A;WP:&amp;#x20;Adds a callback function to a filter hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the filter to add the callback to.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;The callback to be run when the filter is applied.&amp;#x0A;&amp;#x0A;$priority&amp;#x20;Used to specify the order in which the functions associated with a particular filter&amp;#x0A;&amp;#x09;&amp;#x09;are executed. Lower numbers correspond with earlier execution, and functions with the same priority&amp;#x0A;&amp;#x09;&amp;#x09;are executed in the order in which they were added to the filter.&amp;#x0A;&amp;#x0A;$accepted_args&amp;#x20;The number of arguments the function accepts.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true) Always returns true.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_image_size" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Register a new image size.&amp;#x0A;&amp;#x0A;$name&amp;#x20;Image size identifier.&amp;#x0A;&amp;#x0A;$width&amp;#x20;Image width in pixels. Default 0.&amp;#x0A;&amp;#x0A;$height&amp;#x20;Image height in pixels. Default 0.&amp;#x0A;&amp;#x0A;$crop&amp;#x20;Image cropping behavior. If false, the image will be scaled (default), If true, image&amp;#x0A;&amp;#x09;&amp;#x09;will be cropped to the specified dimensions using center positions. If an array, the image will be&amp;#x0A;&amp;#x09;&amp;#x09;cropped using the array to specify the crop location. Array values must be in the format: array(&amp;#x0A;&amp;#x09;&amp;#x09;x_crop_position, y_crop_position ) where: x_crop_position accepts: 'left', 'center', or 'right'.&amp;#x0A;&amp;#x09;&amp;#x09;y_crop_position accepts: 'top', 'center', or 'bottom'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_link" func="yes">
+      <Overload retVal="int|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Add a link to using values provided in $_POST.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|WP_Error) Value 0 or WP_Error on failure. The link ID on success."/>
+    </KeyWord>
+    <KeyWord name="add_links_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Links main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_magic_quotes" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Walks the array while sanitizing the contents.&amp;#x0A;&amp;#x0A;$array&amp;#x20;Array to walk while sanitizing contents.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) Sanitized $array.">
+        <Param name="array $array"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_management_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Tools main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_media_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Media main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_menu_classes" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$menu&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array)">
+        <Param name="array $menu"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_menu_page" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Add a top-level menu page.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by. Should be unique for this menu page and only&amp;#x0A;&amp;#x09;&amp;#x09;include lowercase alphanumeric, dashes, and underscores characters to be compatible with&amp;#x0A;&amp;#x09;&amp;#x09;sanitize_key().&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$icon_url&amp;#x20;The URL to the icon to be used for this menu. Pass a base64-encoded SVG using a data&amp;#x0A;&amp;#x09;&amp;#x09;URI, which will be colored to match the color scheme. This should begin with&amp;#x0A;&amp;#x09;&amp;#x09;'data:image/svg+xml;base64,'. Pass the name of a Dashicons helper class to use a font icon, e.g.&amp;#x0A;&amp;#x09;&amp;#x09;'dashicons-chart-pie'. Pass 'none' to leave div.wp-menu-image empty so an icon can be added via CSS.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The resulting page's hook_suffix.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_meta" func="yes">
+      <Overload retVal="int|bool" descr="&amp;#x0A;WP:&amp;#x20;Add post meta data defined in $_POST superglobal for post with given ID.&amp;#x0A;&amp;#x0A;$post_ID&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|bool)">
+        <Param name="int $post_ID"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_metadata" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Adds metadata for the specified object.&amp;#x0A;&amp;#x0A;$meta_type&amp;#x20;Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any&amp;#x0A;&amp;#x09;&amp;#x09;other object type with an associated meta table.&amp;#x0A;&amp;#x0A;$object_id&amp;#x20;ID of the object metadata is for.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata key.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the specified metadata key should be unique for the object. If true, and the&amp;#x0A;&amp;#x09;&amp;#x09;object already has a value for the specified metadata key, no change will be made.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) The meta ID on success, false on failure.">
+        <Param name="string $meta_type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_meta_box" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds a meta box to one or more screens.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Meta box ID (used in the 'id' attribute for the meta box).&amp;#x0A;&amp;#x0A;$title&amp;#x20;Title of the meta box.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;Function that fills the box with the desired content. The function should echo its&amp;#x0A;&amp;#x09;&amp;#x09;output.&amp;#x0A;&amp;#x0A;$screen&amp;#x20;The screen or screens on which to show the box (such as a post type, 'link', or&amp;#x0A;&amp;#x09;&amp;#x09;'comment'). Accepts a single screen ID, WP_Screen object, or array of screen IDs. Default is the&amp;#x0A;&amp;#x09;&amp;#x09;current screen. If you have used add_menu_page() or add_submenu_page() to create a new screen (and&amp;#x0A;&amp;#x09;&amp;#x09;hence screen_id), make sure your menu slug conforms to the limits of sanitize_key() otherwise the&amp;#x0A;&amp;#x09;&amp;#x09;'screen' menu may not correctly render on your page.&amp;#x0A;&amp;#x0A;$context&amp;#x20;The context within the screen where the box should display. Available contexts vary&amp;#x0A;&amp;#x09;&amp;#x09;from screen to screen. Post edit screen contexts include 'normal', 'side', and 'advanced'. Comments&amp;#x0A;&amp;#x09;&amp;#x09;screen contexts include 'normal' and 'side'. Menus meta boxes (accordion sections) all use the&amp;#x0A;&amp;#x09;&amp;#x09;'side' context. Global&amp;#x0A;&amp;#x0A;$priority&amp;#x20;The priority within the context where the box should show. Accepts 'high', 'core',&amp;#x0A;&amp;#x09;&amp;#x09;'default', or 'low'.&amp;#x0A;&amp;#x0A;$callback_args&amp;#x20;Data that should be set as the $args property of the box array (which is the&amp;#x0A;&amp;#x09;&amp;#x09;second parameter passed to your callback).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_network_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Adds a new network option.&amp;#x0A;&amp;#x0A;$network_id&amp;#x20;ID of the network. Can be null to default to the current network ID.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to add. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Option value, can be anything. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was added, false otherwise.">
+        <Param name="int $network_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_new_user_to_blog" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds a newly created user to the appropriate blog&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;$password&amp;#x20;User password. Ignored.&amp;#x0A;&amp;#x0A;$meta&amp;#x20;Signup meta data.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_object_page" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Add a top-level menu page in the ‘objects’ section.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$icon_url&amp;#x20;The url to the icon to be used for this menu.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The resulting page's hook_suffix.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Adds a new option.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to add. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Option value. Must be serializable if non-scalar. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;$deprecated&amp;#x20;Description. Not used anymore.&amp;#x0A;&amp;#x0A;$autoload&amp;#x20;Whether to load the option when WordPress starts up. Default is enabled. Accepts 'no'&amp;#x0A;&amp;#x09;&amp;#x09;to disable for legacy reasons.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was added, false otherwise.">
+        <Param name="string $option"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_options_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Settings main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_option_update_handler" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Register a setting and its sanitization callback&amp;#x0A;&amp;#x0A;$option_group&amp;#x20;A settings group name. Should correspond to an allowed option key name. Default&amp;#x0A;&amp;#x09;&amp;#x09;allowed option key names include 'general', 'discussion', 'media', 'reading', 'writing', 'misc',&amp;#x0A;&amp;#x09;&amp;#x09;'options', and 'privacy'.&amp;#x0A;&amp;#x0A;$option_name&amp;#x20;The name of an option to sanitize and save.&amp;#x0A;&amp;#x0A;$sanitize_callback&amp;#x20;A callback function that sanitizes the option's value.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $option_group"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_option_whitelist" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Adds an array of options to the list of allowed options.&amp;#x0A;&amp;#x0A;$new_options&amp;#x20;&amp;#x0A;&amp;#x0A;$options&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array)">
+        <Param name="array $new_options"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_pages_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Pages main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_permastruct" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add permalink structure.&amp;#x0A;&amp;#x0A;$name&amp;#x20;Name for permalink structure.&amp;#x0A;&amp;#x0A;$struct&amp;#x20;Permalink structure.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Arguments for building the rules from the permalink structure, see&amp;#x0A;&amp;#x09;&amp;#x09;WP_Rewrite::add_permastruct() for full details.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_ping" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Add a URL to those already pinged.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post object or ID.&amp;#x0A;&amp;#x0A;$uri&amp;#x20;Ping URI or array of URIs.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) How many rows were updated.">
+        <Param name="int WP_Post $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_plugins_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Plugins main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_posts_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Posts main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_post_meta" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Adds a meta field to the given post.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the same key should not be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) Meta ID on success, false on failure.">
+        <Param name="int $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_post_type_support" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Registers support of certain features for a post type.&amp;#x0A;&amp;#x0A;$post_type&amp;#x20;The post type for which to add the feature.&amp;#x0A;&amp;#x0A;$feature&amp;#x20;The feature being added, accepts an array of feature strings or a single string.&amp;#x0A;&amp;#x0A;$args&amp;#x20;extra arguments to pass along with certain features.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $post_type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_query_arg" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves a modified URL query string.&amp;#x0A;&amp;#x0A;$key&amp;#x20;Either a query variable key, or an associative array of query variables.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Either a query variable value, or a URL to act upon.&amp;#x0A;&amp;#x0A;$url&amp;#x20;A URL to act upon.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) New URL query string (unescaped).">
+        <Param name="string array $key"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_rewrite_endpoint" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add an endpoint, like /trackback/.&amp;#x0A;&amp;#x0A;$name&amp;#x20;Name of the endpoint.&amp;#x0A;&amp;#x0A;$places&amp;#x20;Endpoint mask describing the places the endpoint should be added. Accepts a mask of:&amp;#x0A;&amp;#x09;&amp;#x09;EP_ALL EP_NONE EP_ALL_ARCHIVES EP_ATTACHMENT EP_AUTHORS EP_CATEGORIES EP_COMMENTS EP_DATE EP_DAY&amp;#x0A;&amp;#x09;&amp;#x09;EP_MONTH EP_PAGES EP_PERMALINK EP_ROOT EP_SEARCH EP_TAGS EP_YEAR&amp;#x0A;&amp;#x0A;$query_var&amp;#x20;Name of the corresponding query variable. Pass false to skip registering a query_var&amp;#x0A;&amp;#x09;&amp;#x09;for this endpoint. Defaults to the value of $name.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_rewrite_rule" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds a rewrite rule that transforms a URL structure to a set of query vars.&amp;#x0A;&amp;#x0A;$regex&amp;#x20;Regular expression to match request against.&amp;#x0A;&amp;#x0A;$query&amp;#x20;The corresponding query vars for this rewrite rule.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Priority of the new rule. Accepts 'top' or 'bottom'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $regex"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_rewrite_tag" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add a new rewrite tag (like %postname%).&amp;#x0A;&amp;#x0A;$tag&amp;#x20;Name of the new rewrite tag.&amp;#x0A;&amp;#x0A;$regex&amp;#x20;Regular expression to substitute the tag for in rewrite rules.&amp;#x0A;&amp;#x0A;$query&amp;#x20;String to append to the rewritten query. Must end in '='.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $tag"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_role" func="yes">
+      <Overload retVal="WP_Role|null" descr="&amp;#x0A;WP:&amp;#x20;Add role, if it does not exist.&amp;#x0A;&amp;#x0A;$role&amp;#x20;Role name.&amp;#x0A;&amp;#x0A;$display_name&amp;#x20;Display name for role.&amp;#x0A;&amp;#x0A;$capabilities&amp;#x20;List of capabilities keyed by the capability name, e.g. array( 'edit_posts' =&gt;&amp;#x0A;&amp;#x09;&amp;#x09;true, 'delete_posts' =&gt; false ).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(WP_Role|null) WP_Role object if role is added, null if already exists.">
+        <Param name="string $role"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_screen_option" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Register and configure an admin screen option&amp;#x0A;&amp;#x0A;$option&amp;#x20;An option name.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Option-dependent arguments.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $option"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_settings_error" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Register a settings error to be displayed to the user.&amp;#x0A;&amp;#x0A;$setting&amp;#x20;Slug title of the setting to which this error applies.&amp;#x0A;&amp;#x0A;$code&amp;#x20;Slug-name to identify the error. Used as part of 'id' attribute in HTML output.&amp;#x0A;&amp;#x0A;$message&amp;#x20;The formatted message text to display to the user (will be shown inside styled &lt;div&gt;&amp;#x0A;&amp;#x09;&amp;#x09;and &lt;p&gt; tags).&amp;#x0A;&amp;#x0A;$type&amp;#x20;Message type, controls HTML class. Possible values include 'error', 'success', 'warning',&amp;#x0A;&amp;#x09;&amp;#x09;'info'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $setting"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_settings_field" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add a new field to a section of a settings page.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Slug-name to identify the field. Used in the 'id' attribute of tags.&amp;#x0A;&amp;#x0A;$title&amp;#x20;Formatted title of the field. Shown as the label for the field during output.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;Function that fills the field with the desired form inputs. The function should echo&amp;#x0A;&amp;#x09;&amp;#x09;its output.&amp;#x0A;&amp;#x0A;$page&amp;#x20;The slug-name of the settings page on which to show the section (general, reading,&amp;#x0A;&amp;#x09;&amp;#x09;writing,...).&amp;#x0A;&amp;#x0A;$section&amp;#x20;The slug-name of the section of the settings page in which to show the box.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Extra arguments used when outputting the field. 'label_for'(string) When supplied, the&amp;#x0A;&amp;#x09;&amp;#x09;setting title will be wrapped in a &lt;label&gt; element, its for attribute populated with this value.&amp;#x0A;&amp;#x09;&amp;#x09;'class'(string) CSS Class to be added to the &lt;tr&gt; element when the field is output.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_settings_section" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Add a new section to a settings page.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Slug-name to identify the section. Used in the 'id' attribute of tags.&amp;#x0A;&amp;#x0A;$title&amp;#x20;Formatted title of the section. Shown as the heading for the section.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;Function that echos out any content at the top of the section (between heading and&amp;#x0A;&amp;#x09;&amp;#x09;fields).&amp;#x0A;&amp;#x0A;$page&amp;#x20;The slug-name of the settings page on which to show the section. Built-in pages include&amp;#x0A;&amp;#x09;&amp;#x09;'general', 'reading', 'writing', 'discussion', 'media', etc. Create your own using&amp;#x0A;&amp;#x09;&amp;#x09;add_options_page();&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_shortcode" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds a new shortcode.&amp;#x0A;&amp;#x0A;$tag&amp;#x20;Shortcode tag to be searched in post content.&amp;#x0A;&amp;#x0A;$callback&amp;#x20;The callback function to run when the shortcode is found. Every shortcode callback is&amp;#x0A;&amp;#x09;&amp;#x09;passed three parameters by default, including an array of attributes ($atts), the shortcode content&amp;#x0A;&amp;#x09;&amp;#x09;or null if not set ($content), and finally the shortcode tag itself ($shortcode_tag), in that order.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $tag"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_site_meta" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Adds metadata to a site.&amp;#x0A;&amp;#x0A;$site_id&amp;#x20;Site ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the same key should not be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) Meta ID on success, false on failure.">
+        <Param name="int $site_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_site_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Adds a new option for the current network.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to add. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Option value, can be anything. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was added, false otherwise.">
+        <Param name="string $option"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_submenu_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add a submenu page.&amp;#x0A;&amp;#x0A;$parent_slug&amp;#x20;The slug name for the parent menu (or the file name of a standard WordPress admin&amp;#x0A;&amp;#x09;&amp;#x09;page).&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by. Should be unique for this menu and only&amp;#x0A;&amp;#x09;&amp;#x09;include lowercase alphanumeric, dashes, and underscores characters to be compatible with&amp;#x0A;&amp;#x09;&amp;#x09;sanitize_key().&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $parent_slug"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_term_meta" func="yes">
+      <Overload retVal="int|false|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Adds metadata to a term.&amp;#x0A;&amp;#x0A;$term_id&amp;#x20;Term ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the same key should not be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false|WP_Error) Meta ID on success, false on failure. WP_Error when term_id is ambiguous&amp;#x0A;&amp;#x09;&amp;#x09;between taxonomies.">
+        <Param name="int $term_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_theme_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Appearance main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_theme_support" func="yes">
+      <Overload retVal="void|false" descr="&amp;#x0A;WP:&amp;#x20;Registers theme support for a given feature.&amp;#x0A;&amp;#x0A;$feature&amp;#x20;The feature being added. Likely core values include: 'admin-bar' 'align-wide'&amp;#x0A;&amp;#x09;&amp;#x09;'automatic-feed-links' 'core-block-patterns' 'custom-background' 'custom-header'&amp;#x0A;&amp;#x09;&amp;#x09;'custom-line-height' 'custom-logo' 'customize-selective-refresh-widgets' 'custom-spacing'&amp;#x0A;&amp;#x09;&amp;#x09;'custom-units' 'dark-editor-style' 'disable-custom-colors' 'disable-custom-font-sizes'&amp;#x0A;&amp;#x09;&amp;#x09;'editor-color-palette' 'editor-gradient-presets' 'editor-font-sizes' 'editor-styles'&amp;#x0A;&amp;#x09;&amp;#x09;'featured-content' 'html5' 'menus' 'post-formats' 'post-thumbnails' 'responsive-embeds'&amp;#x0A;&amp;#x09;&amp;#x09;'starter-content' 'title-tag' 'wp-block-styles' 'widgets' 'widgets-block-editor'&amp;#x0A;&amp;#x0A;$args&amp;#x20;extra arguments to pass along with certain features.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void|false) Void on success, false on failure.">
+        <Param name="string $feature"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_thickbox" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Enqueues the default ThickBox js and css.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="add_user" func="yes">
+      <Overload retVal="int|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Creates a new user from the “Users” form using $_POST information.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|WP_Error) WP_Error or User ID."/>
+    </KeyWord>
+    <KeyWord name="add_users_page" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Add submenu page to the Users/Profile main menu.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$position&amp;#x20;The position in the menu order this item should appear.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) The resulting page's hook_suffix, or false if the user does not have the capability&amp;#x0A;&amp;#x09;&amp;#x09;required.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_user_meta" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Adds meta data to a user.&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar.&amp;#x0A;&amp;#x0A;$unique&amp;#x20;Whether the same key should not be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) Meta ID on success, false on failure.">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_user_to_blog" func="yes">
+      <Overload retVal="true|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Adds a user to a blog, along with specifying the user’s role.&amp;#x0A;&amp;#x0A;$blog_id&amp;#x20;ID of the blog the user is being added to.&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;ID of the user being added.&amp;#x0A;&amp;#x0A;$role&amp;#x20;The role you want the user to have.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true|WP_Error) True on success or a WP_Error object if the user doesn't exist or could not be&amp;#x0A;&amp;#x09;&amp;#x09;added.">
+        <Param name="int $blog_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="add_utility_page" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Add a top-level menu page in the ‘utility’ section.&amp;#x0A;&amp;#x0A;$page_title&amp;#x20;The text to be displayed in the title tags of the page when the menu is selected.&amp;#x0A;&amp;#x0A;$menu_title&amp;#x20;The text to be used for the menu.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;The capability required for this menu to be displayed to the user.&amp;#x0A;&amp;#x0A;$menu_slug&amp;#x20;The slug name to refer to this menu by (should be unique for this menu).&amp;#x0A;&amp;#x0A;$function&amp;#x20;The function to be called to output the content for this page.&amp;#x0A;&amp;#x0A;$icon_url&amp;#x20;The url to the icon to be used for this menu.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The resulting page's hook_suffix.">
+        <Param name="string $page_title"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="adjacent_image_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays next or previous image link that has the same post parent.&amp;#x0A;&amp;#x0A;$prev&amp;#x20;Whether to display the next (false) or previous (true) link.&amp;#x0A;&amp;#x0A;$size&amp;#x20;Image size. Accepts any registered image size name, or an array of width and height&amp;#x0A;&amp;#x09;&amp;#x09;values in pixels (in that order).&amp;#x0A;&amp;#x0A;$text&amp;#x20;Link text.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ bool $prev=true"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="adjacent_posts_rel_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the relational links for the posts adjacent to the current post.&amp;#x0A;&amp;#x0A;$title&amp;#x20;Link title format.&amp;#x0A;&amp;#x0A;$in_same_term&amp;#x20;Whether link should be in a same taxonomy term.&amp;#x0A;&amp;#x0A;$excluded_terms&amp;#x20;Array or comma-separated list of excluded term IDs.&amp;#x0A;&amp;#x0A;$taxonomy&amp;#x20;Taxonomy, if $in_same_term is true.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $title='%title'"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="adjacent_posts_rel_link_wp_head" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays relational links for the posts adjacent to the current post for single post&amp;#x0A;&amp;#x09;pages.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="adjacent_post_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the adjacent post link.&amp;#x0A;&amp;#x0A;$format&amp;#x20;Link anchor format.&amp;#x0A;&amp;#x0A;$link&amp;#x20;Link permalink format.&amp;#x0A;&amp;#x0A;$in_same_term&amp;#x20;Whether link should be in a same taxonomy term.&amp;#x0A;&amp;#x0A;$excluded_terms&amp;#x20;Array or comma-separated list of excluded category IDs.&amp;#x0A;&amp;#x0A;$previous&amp;#x20;Whether to display link to previous or next post.&amp;#x0A;&amp;#x0A;$taxonomy&amp;#x20;Taxonomy, if $in_same_term is true.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $format"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="admin_color_scheme_picker" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the default admin color scheme picker (Used in user-edit.php)&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="admin_created_user_email" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="admin_url" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the URL to the admin area for the current site.&amp;#x0A;&amp;#x0A;$path&amp;#x20;Path relative to the admin URL. Default 'admin'.&amp;#x0A;&amp;#x0A;$scheme&amp;#x20;The scheme to use. Default is 'admin', which obeys force_ssl_admin() and is_ssl().&amp;#x0A;&amp;#x09;&amp;#x09;'http' or 'https' can be passed to force those schemes.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Admin URL link with optional path appended.">
+        <Param name="[ string $path=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="allowed_http_request_hosts" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Mark allowed redirect hosts safe for HTTP requests as well.&amp;#x0A;&amp;#x0A;$is_external&amp;#x20;&amp;#x0A;&amp;#x0A;$host&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool)">
+        <Param name="bool $is_external"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="allowed_tags" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Display all of the allowed tags in HTML format with attributes.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) HTML allowed tags entity encoded."/>
+    </KeyWord>
+    <KeyWord name="allow_subdirectory_install" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Allow subdirectory installation.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether subdirectory installation is allowed"/>
+    </KeyWord>
+    <KeyWord name="allow_subdomain_install" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Allow subdomain installation&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether subdomain installation is allowed"/>
+    </KeyWord>
+    <KeyWord name="antispambot" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Converts email addresses characters to HTML entities to block spam bots.&amp;#x0A;&amp;#x0A;$email_address&amp;#x20;Email address.&amp;#x0A;&amp;#x0A;$hex_encoding&amp;#x20;Set to 1 to enable hex encoding.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Converted email address.">
+        <Param name="string $email_address"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="apache_mod_loaded" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Does the specified module exist in the Apache config?&amp;#x0A;&amp;#x0A;$mod&amp;#x20;The module, e.g. mod_rewrite.&amp;#x0A;&amp;#x0A;$default&amp;#x20;The default return value if the module is not found.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the specified module is loaded.">
+        <Param name="string $mod"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="apply_filters" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Calls the callback functions that have been added to a filter hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the filter hook.&amp;#x0A;&amp;#x0A;$value&amp;#x20;The value to filter.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Additional parameters to pass to the callback functions.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed) The filtered value after all hooked functions are applied to it.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="apply_filters_deprecated" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Fires functions attached to a deprecated filter hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the filter hook.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Array of additional function arguments to be passed to apply_filters().&amp;#x0A;&amp;#x0A;$version&amp;#x20;The version of WordPress that deprecated the hook.&amp;#x0A;&amp;#x0A;$replacement&amp;#x20;The hook that should have been used.&amp;#x0A;&amp;#x0A;$message&amp;#x20;A message regarding the change.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="apply_filters_ref_array" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Calls the callback functions that have been added to a filter hook, specifying&amp;#x0A;&amp;#x09;arguments in an array.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the filter hook.&amp;#x0A;&amp;#x0A;$args&amp;#x20;The arguments supplied to the functions hooked to $hook_name.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed) The filtered value after all hooked functions are applied to it.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="apply_shortcodes" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Search content for shortcodes and filter shortcodes through their hooks.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Content to search for shortcodes.&amp;#x0A;&amp;#x0A;$ignore_html&amp;#x20;When true, shortcodes inside HTML elements will be skipped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Content with shortcodes filtered out.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="atom_enclosure" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the atom enclosure for the current post.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="atom_site_icon" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays Site Icon in atom feeds.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="attachment_id3_data_meta_box" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display fields for ID3 data&amp;#x0A;&amp;#x0A;$post&amp;#x20;A post object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="attachment_submitbox_metadata" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays non-editable attachment metadata in the publish meta box.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="attachment_submit_meta_box" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display attachment submit form fields.&amp;#x0A;&amp;#x0A;$post&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="attachment_url_to_postid" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Tries to convert an attachment URL into a post ID.&amp;#x0A;&amp;#x0A;$url&amp;#x20;The URL to resolve.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) The found post ID, or 0 on failure.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="attribute_escape" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escaping for HTML attributes.&amp;#x0A;&amp;#x0A;$text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="author_can" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Returns whether the author of the supplied post has the specified capability.&amp;#x0A;&amp;#x0A;$post&amp;#x20;Post ID or post object.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;Capability name.&amp;#x0A;&amp;#x0A;$args&amp;#x20;further parameters, typically starting with an object ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the post author has the given capability.">
+        <Param name="int WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="auth_redirect" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Checks if a user is logged in, if not it redirects them to the login page.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="automatic_feed_links" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Enable/disable automatic general feed link outputting.&amp;#x0A;&amp;#x0A;$add&amp;#x20;Add or remove links.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ bool $add=true]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="avoid_blog_page_permalink_collision" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Avoids a collision between a site slug and a permalink slug.&amp;#x0A;&amp;#x0A;$data&amp;#x20;An array of post data.&amp;#x0A;&amp;#x0A;$postarr&amp;#x20;An array of posts. Not currently used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) The new array of post data after checking for collisions.">
+        <Param name="array $data"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="background_color" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays background color value.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="background_image" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays background image path.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="backslashit" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Adds backslashes before letters and before a number at the start of a string.&amp;#x0A;&amp;#x0A;$string&amp;#x20;Value to which backslashes will be added.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) String with backslashes inserted.">
+        <Param name="string $string"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="balanceTags" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Balances tags if forced to, or if the ‘use_balanceTags’ option is set to true.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to be balanced&amp;#x0A;&amp;#x0A;$force&amp;#x20;If true, forces balancing, ignoring the value of the option.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Balanced text">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="before_last_bar" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Remove last item on a pipe-delimited string.&amp;#x0A;&amp;#x0A;$string&amp;#x20;A pipe-delimited string.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Either $string or everything before the last pipe.">
+        <Param name="string $string"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="block_editor_rest_api_preload" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Preloads common data used with the block editor by specifying an array of REST API&amp;#x0A;&amp;#x09;paths that will be preloaded for a given block editor context.&amp;#x0A;&amp;#x0A;$preload_paths&amp;#x20;List of paths to preload.&amp;#x0A;&amp;#x0A;$block_editor_context&amp;#x20;The current block editor context.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="array $preload_paths"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="block_has_support" func="yes">
+      <Overload retVal="boolean" descr="&amp;#x0A;WP:&amp;#x20;Checks whether the current block type supports the feature requested.&amp;#x0A;&amp;#x0A;$block_type&amp;#x20;Block type to check for support.&amp;#x0A;&amp;#x0A;$feature&amp;#x20;Name of the feature to check support for.&amp;#x0A;&amp;#x0A;$default&amp;#x20;Fallback value for feature support, defaults to false.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(boolean) Whether or not the feature is supported.">
+        <Param name="WP_Block_Type $block_type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="block_version" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Returns the current version of the block format that the content string is using.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Content to test.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) The block format version is 1 if the content contains one or more blocks, 0 otherwise.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bloginfo" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays information about the current site.&amp;#x0A;&amp;#x0A;$show&amp;#x20;Site information to display.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $show='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bloginfo_rss" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display RSS container for the bloginfo function.&amp;#x0A;&amp;#x0A;$show&amp;#x20;See get_bloginfo() for possible values.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $show='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="body_class" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the class names for the body element.&amp;#x0A;&amp;#x0A;$class&amp;#x20;Space-separated string or array of class names to add to the class list.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string string[] $class='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bool_from_yn" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Whether input is yes or no.&amp;#x0A;&amp;#x0A;$yn&amp;#x20;Character string containing either 'y' (yes) or 'n' (no).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if yes, false on anything else.">
+        <Param name="string $yn"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="build_query" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Build URL query based on an associative and, or indexed array.&amp;#x0A;&amp;#x0A;$data&amp;#x20;URL-encode key/value pairs.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) URL-encoded string.">
+        <Param name="array $data"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="build_query_vars_from_query_block" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Helper function that constructs a WP_Query args array from a Query block properties.&amp;#x0A;&amp;#x0A;$block&amp;#x20;Block instance.&amp;#x0A;&amp;#x0A;$page&amp;#x20;Current query's page.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) Returns the constructed WP_Query arguments.">
+        <Param name="WP_Block $block"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="bulk_edit_posts" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Process the post data for the bulk editing of posts.&amp;#x0A;&amp;#x0A;$post_data&amp;#x20;the array of post data to process if not provided will use $_POST superglobal.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array)">
+        <Param name="[ array $post_data=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="cache_javascript_headers" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Set the headers for caching for 10 days with JavaScript content type.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="cache_users" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Retrieve info for user lists to prevent multiple queries by get_userdata()&amp;#x0A;&amp;#x0A;$user_ids&amp;#x20;User ID numbers list&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="array $user_ids"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="calendar_week_mod" func="yes">
+      <Overload retVal="float" descr="&amp;#x0A;WP:&amp;#x20;Get number of days since the start of the week.&amp;#x0A;&amp;#x0A;$num&amp;#x20;Number of day.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(float) Days since the start of the week.">
+        <Param name="int $num"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="cancel_comment_reply_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays HTML content for cancel comment reply link.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to display for cancel reply link. If empty, defaults to 'Click here to cancel&amp;#x0A;&amp;#x09;&amp;#x09;reply'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $text='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="can_edit_network" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Whether or not we can edit this network from this page.&amp;#x0A;&amp;#x0A;$network_id&amp;#x20;The network ID to check.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if network can be edited, otherwise false.">
+        <Param name="int $network_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="capital_P_dangit" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Forever eliminate “Wordpress” from the planet (or at least the little bit we can&amp;#x0A;&amp;#x09;influence).&amp;#x0A;&amp;#x0A;$text&amp;#x20;The text to be modified.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The modified text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="category_description" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves category description.&amp;#x0A;&amp;#x0A;$category&amp;#x20;Category ID. Defaults to the current category ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Category description, if available.">
+        <Param name="[ int $category]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="category_exists" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Check whether a category exists.&amp;#x0A;&amp;#x0A;$cat_name&amp;#x20;Category name.&amp;#x0A;&amp;#x0A;$parent&amp;#x20;ID of parent term.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed)">
+        <Param name="int string $cat_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="cat_is_ancestor_of" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Checks if a category is an ancestor of another category.&amp;#x0A;&amp;#x0A;$cat1&amp;#x20;ID or object to check if this is the parent category.&amp;#x0A;&amp;#x0A;$cat2&amp;#x20;The child category.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether $cat2 is child of $cat1.">
+        <Param name="int object $cat1"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="checked" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Outputs the HTML checked attribute.&amp;#x0A;&amp;#x0A;$checked&amp;#x20;One of the values to compare&amp;#x0A;&amp;#x0A;$current&amp;#x20;(true) The other value to compare if not just true&amp;#x0A;&amp;#x0A;$echo&amp;#x20;Whether to echo or just return the string&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) HTML attribute or empty string">
+        <Param name="mixed $checked"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_admin_referer" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Ensures intent by verifying that a user was referred from another admin page with the&amp;#x0A;&amp;#x09;correct security nonce.&amp;#x0A;&amp;#x0A;$action&amp;#x20;The nonce action.&amp;#x0A;&amp;#x0A;$query_arg&amp;#x20;Key to check for nonce in $_REQUEST.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) 1 if the nonce is valid and generated between 0-12 hours ago, 2 if the nonce is valid&amp;#x0A;&amp;#x09;&amp;#x09;and generated between 12-24 hours ago. False if the nonce is invalid.">
+        <Param name="[ int string $action=-1"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_ajax_referer" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Verifies the Ajax request to prevent processing requests external of the blog.&amp;#x0A;&amp;#x0A;$action&amp;#x20;Action nonce.&amp;#x0A;&amp;#x0A;$query_arg&amp;#x20;Key to check for the nonce in $_REQUEST (since 2.5). If false, $_REQUEST values will&amp;#x0A;&amp;#x09;&amp;#x09;be evaluated for '_ajax_nonce', and '_wpnonce' (in that order).&amp;#x0A;&amp;#x0A;$die&amp;#x20;Whether to die early when the nonce cannot be verified.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) 1 if the nonce is valid and generated between 0-12 hours ago, 2 if the nonce is valid&amp;#x0A;&amp;#x09;&amp;#x09;and generated between 12-24 hours ago. False if the nonce is invalid.">
+        <Param name="[ int string $action=-1"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_and_publish_future_post" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Publish future post and make sure post ID has future post status.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID or post object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int WP_Post $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_column" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Checks that database table column matches the criteria.&amp;#x0A;&amp;#x0A;$table_name&amp;#x20;Database table name.&amp;#x0A;&amp;#x0A;$col_name&amp;#x20;Table column name.&amp;#x0A;&amp;#x0A;$col_type&amp;#x20;Table column type.&amp;#x0A;&amp;#x0A;$is_null&amp;#x20;Check is null.&amp;#x0A;&amp;#x0A;$key&amp;#x20;Key info.&amp;#x0A;&amp;#x0A;$default&amp;#x20;Default value.&amp;#x0A;&amp;#x0A;$extra&amp;#x20;Extra value.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True, if matches. False, if not matching.">
+        <Param name="string $table_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_comment" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Check whether a comment passes internal checks to be allowed to add.&amp;#x0A;&amp;#x0A;$author&amp;#x20;Comment author name.&amp;#x0A;&amp;#x0A;$email&amp;#x20;Comment author email.&amp;#x0A;&amp;#x0A;$url&amp;#x20;Comment author URL.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Content of the comment.&amp;#x0A;&amp;#x0A;$user_ip&amp;#x20;Comment author IP address.&amp;#x0A;&amp;#x0A;$user_agent&amp;#x20;Comment author User-Agent.&amp;#x0A;&amp;#x0A;$comment_type&amp;#x20;Comment type, either user-submitted comment, trackback, or pingback.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) If all checks pass, true, otherwise false.">
+        <Param name="string $author"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_comment_flood_db" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Hooks WP’s native database-based comment-flood check.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="check_import_new_users" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Checks if the current user has permissions to import new users.&amp;#x0A;&amp;#x0A;$permission&amp;#x20;A permission to be checked. Currently not used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the user has proper permissions, false if they do not.">
+        <Param name="string $permission"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_password_reset_key" func="yes">
+      <Overload retVal="WP_User|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Retrieves a user row based on password reset key and login&amp;#x0A;&amp;#x0A;$key&amp;#x20;Hash to validate sending user's password.&amp;#x0A;&amp;#x0A;$login&amp;#x20;The user login.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(WP_User|WP_Error) WP_User object on success, WP_Error object for invalid or expired keys.">
+        <Param name="string $key"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_theme_switched" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Checks if a theme has been changed and runs ‘after_switch_theme’ hook on the next&amp;#x0A;&amp;#x09;WP load.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="check_upload_mimes" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Check an array of MIME types against a list of allowed types.&amp;#x0A;&amp;#x0A;$mimes&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array)">
+        <Param name="array $mimes"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="check_upload_size" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Determine if uploaded file exceeds space quota.&amp;#x0A;&amp;#x0A;$file&amp;#x20;$_FILES array for a given file.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) $_FILES array with 'error' key set if file exceeds quota. 'error' is empty otherwise.">
+        <Param name="array $file"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="choose_primary_blog" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Handles the display of choosing a user’s primary site.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="clean_attachment_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Will clean the attachment in the cache.&amp;#x0A;&amp;#x0A;$id&amp;#x20;The attachment ID in the cache to clean.&amp;#x0A;&amp;#x0A;$clean_terms&amp;#x20;Whether to clean terms cache.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_blog_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Clean the blog cache&amp;#x0A;&amp;#x0A;$blog&amp;#x20;The site object or ID to be cleared from cache.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="WP_Site int $blog"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_bookmark_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deletes the bookmark cache.&amp;#x0A;&amp;#x0A;$bookmark_id&amp;#x20;Bookmark ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $bookmark_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_category_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Removes the category cache data based on ID.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Category ID&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_comment_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Removes a comment from the object cache.&amp;#x0A;&amp;#x0A;$ids&amp;#x20;Comment ID or an array of comment IDs to remove from cache.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int array $ids"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_dirsize_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Cleans directory size cache used by recurse_dirsize().&amp;#x0A;&amp;#x0A;$path&amp;#x20;Full path of a directory or file.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $path"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_network_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Removes a network from the object cache.&amp;#x0A;&amp;#x0A;$ids&amp;#x20;Network ID or an array of network IDs to remove from cache.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int array $ids"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_object_term_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Removes the taxonomy relationship to terms from the cache.&amp;#x0A;&amp;#x0A;$object_ids&amp;#x20;Single or list of term object ID(s).&amp;#x0A;&amp;#x0A;$object_type&amp;#x20;The taxonomy object type.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int array $object_ids"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_page_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Will clean the page in the cache.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Page ID to clean&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_post_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Will clean the post in the cache.&amp;#x0A;&amp;#x0A;$post&amp;#x20;Post ID or post object to remove from the cache.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_pre" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Accepts matches array from preg_replace_callback in wpautop() or a string.&amp;#x0A;&amp;#x0A;$matches&amp;#x20;The array or string&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The pre block without paragraph/line break conversion.">
+        <Param name="array string $matches"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_site_details_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Cleans the site details cache for a site.&amp;#x0A;&amp;#x0A;$site_id&amp;#x20;Site ID. Default is the current site ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int $site_id]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_taxonomy_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Clean the caches for a taxonomy.&amp;#x0A;&amp;#x0A;$taxonomy&amp;#x20;Taxonomy slug.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $taxonomy"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_term_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Will remove all of the term IDs from the cache.&amp;#x0A;&amp;#x0A;$ids&amp;#x20;Single or array of term IDs.&amp;#x0A;&amp;#x0A;$taxonomy&amp;#x20;Taxonomy slug. Can be empty, in which case the taxonomies of the passed term IDs will&amp;#x0A;&amp;#x09;&amp;#x09;be used.&amp;#x0A;&amp;#x0A;$clean_taxonomy&amp;#x20;Whether to clean taxonomy wide caches (true), or just individual term object&amp;#x0A;&amp;#x09;&amp;#x09;caches (false).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int int[] $ids"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_url" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Checks and cleans a URL.&amp;#x0A;&amp;#x0A;$url&amp;#x20;The URL to be cleaned.&amp;#x0A;&amp;#x0A;$protocols&amp;#x20;An array of acceptable protocols.&amp;#x0A;&amp;#x0A;$context&amp;#x20;How the URL will be used. Default is 'display'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The cleaned $url after the 'clean_url' filter is applied.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clean_user_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Clean all user caches&amp;#x0A;&amp;#x0A;$user&amp;#x20;User object or ID to be cleaned from the cache&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="WP_User int $user"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="clear_global_post_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deprecated functionality to clear the global post cache.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="codepress_footer_js" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds JavaScript required to make CodePress work on the theme/plugin editors.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="codepress_get_lang" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Determines the language to use for CodePress syntax highlighting.&amp;#x0A;&amp;#x0A;$filename&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $filename"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the link to the current post comments.&amp;#x0A;&amp;#x0A;$deprecated&amp;#x20;Not Used.&amp;#x0A;&amp;#x0A;$deprecated_2&amp;#x20;Not Used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $deprecated=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_link_feed" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Outputs the link to the comments for the current post in an xml safe way&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="comments_number" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the language string for the number of comments the current post has.&amp;#x0A;&amp;#x0A;$zero&amp;#x20;Text for no comments.&amp;#x0A;&amp;#x0A;$one&amp;#x20;Text for one comment.&amp;#x0A;&amp;#x0A;$more&amp;#x20;Text for more than one comment.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID or WP_Post object. Default is the global $post.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string false $zero=false"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_open" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Determines whether the current post is open for comments.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID or WP_Post object. Default current post.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the comments are open.">
+        <Param name="[ int WP_Post $post_id=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_popup_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the link to the comments for the current post ID.&amp;#x0A;&amp;#x0A;$zero&amp;#x20;String to display when no comments.&amp;#x0A;&amp;#x0A;$one&amp;#x20;String to display when only one comment is available.&amp;#x0A;&amp;#x0A;$more&amp;#x20;String to display when there are more than one comment.&amp;#x0A;&amp;#x0A;$css_class&amp;#x20;CSS class to use for comments.&amp;#x0A;&amp;#x0A;$none&amp;#x20;String to display when comments have been turned off.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ false string $zero=false"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_popup_script" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the JS popup script to show a comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="comments_rss" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Return link to the post RSS feed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)"/>
+    </KeyWord>
+    <KeyWord name="comments_rss_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Print RSS comment feed link.&amp;#x0A;&amp;#x0A;$link_text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $link_text='Comments RSS']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comments_template" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Loads the comment template specified in $file.&amp;#x0A;&amp;#x0A;$file&amp;#x20;The file to load.&amp;#x0A;&amp;#x0A;$separate_comments&amp;#x20;Whether to separate the comments by comment type.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $file='/comments.php'"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the author of the current comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or the ID of the comment for which to print the author. Default current&amp;#x0A;&amp;#x09;&amp;#x09;comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_ID]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_email" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the email of the author of the current global $comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or the ID of the comment for which to print the author's email. Default&amp;#x0A;&amp;#x09;&amp;#x09;current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_ID]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_email_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the HTML email link to the author of the current comment.&amp;#x0A;&amp;#x0A;$linktext&amp;#x20;Text to display instead of the comment author's email address.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Text or HTML to display before the email link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Text or HTML to display after the email link.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Comment ID or WP_Comment object. Default is the current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $linktext=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_IP" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the IP address of the author of the current comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or the ID of the comment for which to print the author's IP address.&amp;#x0A;&amp;#x09;&amp;#x09;Default current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_ID]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the HTML link to the URL of the author of the current comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or the ID of the comment for which to print the author's link. Default&amp;#x0A;&amp;#x09;&amp;#x09;current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_ID]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_rss" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the current comment author in the feed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="comment_author_url" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the URL of the author of the current comment, not linked.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or the ID of the comment for which to print the author's URL. Default&amp;#x0A;&amp;#x09;&amp;#x09;current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_ID]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_author_url_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the HTML link of the URL of the author of the current comment.&amp;#x0A;&amp;#x0A;$linktext&amp;#x20;Text to display instead of the comment author's email address.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Text or HTML to display before the email link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Text or HTML to display after the email link.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Comment ID or WP_Comment object. Default is the current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $linktext=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_class" func="yes">
+      <Overload retVal="void|string" descr="&amp;#x0A;WP:&amp;#x20;Generates semantic classes for each comment element.&amp;#x0A;&amp;#x0A;$class&amp;#x20;One or more classes to add to the class list.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Comment ID or WP_Comment object. Default current comment.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID or WP_Post object. Default current post.&amp;#x0A;&amp;#x0A;$echo&amp;#x20;Whether to echo or return the output.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void|string) Void if $echo argument is true, comment classes if $echo is false.">
+        <Param name="[ string string[] $class=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_date" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the comment date of the current comment.&amp;#x0A;&amp;#x0A;$format&amp;#x20;PHP date format. Defaults to the 'date_format' option.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or ID of the comment for which to print the date. Default current&amp;#x0A;&amp;#x09;&amp;#x09;comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $format=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_excerpt" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the excerpt of the current comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or ID of the comment for which to print the excerpt. Default current&amp;#x0A;&amp;#x09;&amp;#x09;comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int WP_Comment $comment_ID"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_exists" func="yes">
+      <Overload retVal="string|null" descr="&amp;#x0A;WP:&amp;#x20;Determine if a comment exists based on author and date.&amp;#x0A;&amp;#x0A;$comment_author&amp;#x20;Author of the comment.&amp;#x0A;&amp;#x0A;$comment_date&amp;#x20;Date of the comment.&amp;#x0A;&amp;#x0A;$timezone&amp;#x20;Timezone. Accepts 'blog' or 'gmt'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|null) Comment post ID on success.">
+        <Param name="string $comment_author"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_footer_die" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display error message at bottom of comments.&amp;#x0A;&amp;#x0A;$msg&amp;#x20;Error Message. Assumed to contain HTML and be sanitized.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $msg"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_form" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Outputs a complete commenting form for use within a template.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Default arguments and form fields to override. 'fields'(array) Default comment fields,&amp;#x0A;&amp;#x09;&amp;#x09;filterable by default via the 'comment_form_default_fields' hook. 'author'(string) Comment author&amp;#x0A;&amp;#x09;&amp;#x09;field HTML. 'email'(string) Comment author email field HTML. 'url'(string) Comment author URL field&amp;#x0A;&amp;#x09;&amp;#x09;HTML. 'cookies'(string) Comment cookie opt-in field HTML. 'comment_field'(string) The comment&amp;#x0A;&amp;#x09;&amp;#x09;textarea field HTML. 'must_log_in'(string) HTML element for a 'must be logged in to comment'&amp;#x0A;&amp;#x09;&amp;#x09;message. 'logged_in_as'(string) HTML element for a 'logged in as [user]' message.&amp;#x0A;&amp;#x09;&amp;#x09;'comment_notes_before'(string) HTML element for a message displayed before the comment fields if the&amp;#x0A;&amp;#x09;&amp;#x09;user is not logged in. Default 'Your email address will not be published.'.&amp;#x0A;&amp;#x09;&amp;#x09;'comment_notes_after'(string) HTML element for a message displayed after the textarea field.&amp;#x0A;&amp;#x09;&amp;#x09;'action'(string) The comment form element action attribute. Default '/wp-comments-post.php'.&amp;#x0A;&amp;#x09;&amp;#x09;'id_form'(string) The comment form element id attribute. Default 'commentform'. 'id_submit'(string)&amp;#x0A;&amp;#x09;&amp;#x09;The comment submit element id attribute. Default 'submit'. 'class_container'(string) The comment&amp;#x0A;&amp;#x09;&amp;#x09;form container class attribute. Default 'comment-respond'. 'class_form'(string) The comment form&amp;#x0A;&amp;#x09;&amp;#x09;element class attribute. Default 'comment-form'. 'class_submit'(string) The comment submit element&amp;#x0A;&amp;#x09;&amp;#x09;class attribute. Default 'submit'. 'name_submit'(string) The comment submit element name attribute.&amp;#x0A;&amp;#x09;&amp;#x09;Default 'submit'. 'title_reply'(string) The translatable 'reply' button label. Default 'Leave a&amp;#x0A;&amp;#x09;&amp;#x09;Reply'. 'title_reply_to'(string) The translatable 'reply-to' button label. Default 'Leave a Reply to&amp;#x0A;&amp;#x09;&amp;#x09;%s', where %s is the author of the comment being replied to. 'title_reply_before'(string) HTML&amp;#x0A;&amp;#x09;&amp;#x09;displayed before the comment form title. Default: &lt;h3 id=&quot;reply-title&quot; class=&quot;comment-reply-title&quot;&gt;.&amp;#x0A;&amp;#x09;&amp;#x09;'title_reply_after'(string) HTML displayed after the comment form title. Default: &lt;/h3&gt;.&amp;#x0A;&amp;#x09;&amp;#x09;'cancel_reply_before'(string) HTML displayed before the cancel reply link.&amp;#x0A;&amp;#x09;&amp;#x09;'cancel_reply_after'(string) HTML displayed after the cancel reply link. 'cancel_reply_link'(string)&amp;#x0A;&amp;#x09;&amp;#x09;The translatable 'cancel reply' button label. Default 'Cancel reply'. 'label_submit'(string) The&amp;#x0A;&amp;#x09;&amp;#x09;translatable 'submit' button label. Default 'Post a comment'. 'submit_button'(string) HTML format&amp;#x0A;&amp;#x09;&amp;#x09;for the Submit button. Default: &lt;input name=&quot;%1$s&quot; type=&quot;submit&quot; id=&quot;%2$s&quot; class=&quot;%3$s&quot; value=&quot;%4$s&quot;&amp;#x0A;&amp;#x09;&amp;#x09;/&gt;. 'submit_field'(string) HTML format for the markup surrounding the Submit button and comment&amp;#x0A;&amp;#x09;&amp;#x09;hidden fields. Default: &lt;p class=&quot;form-submit&quot;&gt;%1$s %2$s&lt;/p&gt;, where %1$s is the submit button markup&amp;#x0A;&amp;#x09;&amp;#x09;and %2$s is the comment hidden fields. 'format'(string) The comment form format. Default 'xhtml'.&amp;#x0A;&amp;#x09;&amp;#x09;Accepts 'xhtml', 'html5'.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID or WP_Post object to generate the form for. Default current post.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array $args=array()"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_form_title" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays text based on comment reply status.&amp;#x0A;&amp;#x0A;$no_reply_text&amp;#x20;Text to display when not replying to a comment.&amp;#x0A;&amp;#x0A;$reply_text&amp;#x20;Text to display when replying to a comment. Accepts &quot;%s&quot; for the author of the&amp;#x0A;&amp;#x09;&amp;#x09;comment being replied to.&amp;#x0A;&amp;#x0A;$link_to_parent&amp;#x20;Boolean to control making the author's name a link to their comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string false $no_reply_text=false"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_guid" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the feed GUID for the current comment.&amp;#x0A;&amp;#x0A;$comment_id&amp;#x20;comment object or ID. Defaults to global comment object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment_id=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_ID" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the comment ID of the current comment.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="comment_id_fields" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Outputs hidden input HTML for replying to comments.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID. Defaults to the current post ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int $post_id]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the link to the comments.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Comment object or ID. Defaults to global comment object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ int WP_Comment $comment=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_reply_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the HTML content for reply to comment link.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Override default options.&amp;#x0A;&amp;#x0A;$comment&amp;#x20;Comment being replied to. Default current comment.&amp;#x0A;&amp;#x0A;$post&amp;#x20;Post ID or WP_Post object the comment is going to be displayed on. Default current post.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array $args=array()"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_text" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the text of the current comment.&amp;#x0A;&amp;#x0A;$comment_ID&amp;#x20;WP_Comment or ID of the comment for which to print the text. Default current&amp;#x0A;&amp;#x09;&amp;#x09;comment.&amp;#x0A;&amp;#x0A;$args&amp;#x20;An array of arguments.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int WP_Comment $comment_ID"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_text_rss" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the current comment content for use in the feeds.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="comment_time" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the comment time of the current comment.&amp;#x0A;&amp;#x0A;$format&amp;#x20;PHP time format. Defaults to the 'time_format' option.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $format='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="comment_type" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the comment type of the current comment.&amp;#x0A;&amp;#x0A;$commenttxt&amp;#x20;String to display for comment type.&amp;#x0A;&amp;#x0A;$trackbacktxt&amp;#x20;String to display for trackback type.&amp;#x0A;&amp;#x0A;$pingbacktxt&amp;#x20;String to display for pingback type.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string false $commenttxt=false"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="compression_test" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Test support for compressing JavaScript from PHP&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="confirm_another_blog_signup" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Confirm a new site signup.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;The domain URL.&amp;#x0A;&amp;#x0A;$path&amp;#x20;The site root path.&amp;#x0A;&amp;#x0A;$blog_title&amp;#x20;The site title.&amp;#x0A;&amp;#x0A;$user_name&amp;#x20;The username.&amp;#x0A;&amp;#x0A;$user_email&amp;#x20;The user's email address.&amp;#x0A;&amp;#x0A;$meta&amp;#x20;Any additional meta from the 'add_signup_meta' filter in validate_blog_signup().&amp;#x0A;&amp;#x0A;$blog_id&amp;#x20;The site ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $domain"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="confirm_blog_signup" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Shows a message confirming that the new site has been registered and is awaiting&amp;#x0A;&amp;#x09;activation.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;The domain or subdomain of the site.&amp;#x0A;&amp;#x0A;$path&amp;#x20;The path of the site.&amp;#x0A;&amp;#x0A;$blog_title&amp;#x20;The title of the new site.&amp;#x0A;&amp;#x0A;$user_name&amp;#x20;The user's username.&amp;#x0A;&amp;#x0A;$user_email&amp;#x20;The user's email address.&amp;#x0A;&amp;#x0A;$meta&amp;#x20;Any additional meta from the 'add_signup_meta' filter in validate_blog_signup().&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $domain"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="confirm_delete_users" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$users&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="array $users"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="confirm_user_signup" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;New user signup confirmation&amp;#x0A;&amp;#x0A;$user_name&amp;#x20;The username&amp;#x0A;&amp;#x0A;$user_email&amp;#x20;The user's email address&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $user_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="content_url" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the URL to the content directory.&amp;#x0A;&amp;#x0A;$path&amp;#x20;Path relative to the content URL.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Content URL link with optional path appended.">
+        <Param name="[ string $path='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="convert_chars" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Converts lone &amp; characters into &amp;#038; (a.k.a. &amp;amp;)&amp;#x0A;&amp;#x0A;$content&amp;#x20;String of characters to be converted.&amp;#x0A;&amp;#x0A;$deprecated&amp;#x20;Not used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Converted string.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="convert_invalid_entities" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Converts invalid Unicode references range to valid range.&amp;#x0A;&amp;#x0A;$content&amp;#x20;String with entities that need converting.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Converted string.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="convert_smilies" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Convert text equivalent of smilies to images.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Content to convert smilies from text.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Converted content with text smilies replaced with images.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="convert_to_screen" func="yes">
+      <Overload retVal="WP_Screen" descr="&amp;#x0A;WP:&amp;#x20;Convert a screen string to a screen object&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The hook name (also known as the hook suffix) used to determine the screen.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(WP_Screen) Screen object.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="copy_dir" func="yes">
+      <Overload retVal="true|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Copies a directory from one location to another via the WordPress Filesystem&amp;#x0A;&amp;#x09;Abstraction.&amp;#x0A;&amp;#x0A;$from&amp;#x20;Source directory.&amp;#x0A;&amp;#x0A;$to&amp;#x20;Destination directory.&amp;#x0A;&amp;#x0A;$skip_list&amp;#x20;An array of files/folders to skip copying.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true|WP_Error) True on success, WP_Error on failure.">
+        <Param name="string $from"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="core_auto_updates_settings" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display WordPress auto-updates settings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="core_update_footer" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$msg&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="[ string $msg='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="core_upgrade_preamble" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display upgrade WordPress for downloading latest or upgrading automatically form.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="count_many_users_posts" func="yes">
+      <Overload retVal="string[]" descr="&amp;#x0A;WP:&amp;#x20;Number of posts written by a list of users.&amp;#x0A;&amp;#x0A;$users&amp;#x20;Array of user IDs.&amp;#x0A;&amp;#x0A;$post_type&amp;#x20;Single post type or array of post types to check. Defaults to 'post'.&amp;#x0A;&amp;#x0A;$public_only&amp;#x20;Only return counts for public posts. Defaults to false.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string[]) Amount of posts each user has written, as strings, keyed by user ID.">
+        <Param name="int[] $users"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="count_users" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Count number of users who have each of the user roles.&amp;#x0A;&amp;#x0A;$strategy&amp;#x20;The computational strategy to use when counting the users. Accepts either 'time' or&amp;#x0A;&amp;#x09;&amp;#x09;'memory'.&amp;#x0A;&amp;#x0A;$site_id&amp;#x20;The site ID to count users for. Defaults to the current site.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) User counts.">
+        <Param name="[ string $strategy='time'"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="count_user_posts" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Number of posts user has written.&amp;#x0A;&amp;#x0A;$userid&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;$post_type&amp;#x20;Single post type or array of post types to count the number of posts for.&amp;#x0A;&amp;#x0A;$public_only&amp;#x20;Whether to only return counts for public posts.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Number of posts the user has written in this post type.">
+        <Param name="int $userid"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="create_empty_blog" func="yes">
+      <Overload retVal="string|int" descr="&amp;#x0A;WP:&amp;#x20;Create an empty blog.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;The new blog's domain.&amp;#x0A;&amp;#x0A;$path&amp;#x20;The new blog's path.&amp;#x0A;&amp;#x0A;$weblog_title&amp;#x20;The new blog's title.&amp;#x0A;&amp;#x0A;$site_id&amp;#x20;Defaults to 1.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|int) The ID of the newly created blog">
+        <Param name="string $domain"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="create_initial_post_types" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Creates the initial post types when ‘init’ action is fired.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="create_initial_rest_routes" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Registers default REST API routes.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="create_initial_taxonomies" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Creates the initial taxonomies.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="create_initial_theme_features" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Creates the initial theme features when the ‘setup_theme’ action is fired.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="create_user" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;An alias of wp_create_user().&amp;#x0A;&amp;#x0A;$username&amp;#x20;The user's username.&amp;#x0A;&amp;#x0A;$password&amp;#x20;The user's password.&amp;#x0A;&amp;#x0A;$email&amp;#x20;The user's email.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) The new user's ID.">
+        <Param name="string $username"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="current_action" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the name of the current action hook.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Hook name of the current action."/>
+    </KeyWord>
+    <KeyWord name="current_datetime" func="yes">
+      <Overload retVal="DateTimeImmutable" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the current time as an object with the timezone from settings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(DateTimeImmutable) Date and time object."/>
+    </KeyWord>
+    <KeyWord name="current_filter" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the name of the current filter hook.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Hook name of the current filter."/>
+    </KeyWord>
+    <KeyWord name="current_theme_info" func="yes">
+      <Overload retVal="WP_Theme" descr="&amp;#x0A;WP:&amp;#x20;Retrieves information on the current active theme.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(WP_Theme)"/>
+    </KeyWord>
+    <KeyWord name="current_theme_supports" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Checks a theme’s support for a given feature.&amp;#x0A;&amp;#x0A;$feature&amp;#x20;The feature being checked. See add_theme_support() for the list of possible values.&amp;#x0A;&amp;#x0A;$args&amp;#x20;extra arguments to be checked against certain features.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the current theme supports the feature, false otherwise.">
+        <Param name="string $feature"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="current_time" func="yes">
+      <Overload retVal="int|string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the current time based on specified type.&amp;#x0A;&amp;#x0A;$type&amp;#x20;Type of time to retrieve. Accepts 'mysql', 'timestamp', or PHP date format string (e.g.&amp;#x0A;&amp;#x09;&amp;#x09;'Y-m-d').&amp;#x0A;&amp;#x0A;$gmt&amp;#x20;Whether to use GMT timezone. Default false.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|string) Integer if $type is 'timestamp', string otherwise.">
+        <Param name="string $type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="current_user_can" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Returns whether the current user has the specified capability.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;Capability name.&amp;#x0A;&amp;#x0A;$args&amp;#x20;further parameters, typically starting with an object ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the current user has the given capability. If $capability is a meta cap and&amp;#x0A;&amp;#x09;&amp;#x09;$object_id is passed, whether the current user has the given meta capability for the&amp;#x0A;given object.">
+        <Param name="string $capability"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="current_user_can_for_blog" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Returns whether the current user has the specified capability for a given site.&amp;#x0A;&amp;#x0A;$blog_id&amp;#x20;Site ID.&amp;#x0A;&amp;#x0A;$capability&amp;#x20;Capability name.&amp;#x0A;&amp;#x0A;$args&amp;#x20;further parameters, typically starting with an object ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the user has the given capability.">
+        <Param name="int $blog_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="customize_themes_print_templates" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Print JS templates for the theme-browsing UI in the Customizer.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="dashboard_browser_nag_class" func="yes">
+      <Overload retVal="string[]" descr="&amp;#x0A;WP:&amp;#x20;Adds an additional class to the browser nag if the current version is insecure.&amp;#x0A;&amp;#x0A;$classes&amp;#x20;Array of meta box classes.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string[]) Modified array of meta box classes.">
+        <Param name="string[] $classes"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dashboard_php_nag_class" func="yes">
+      <Overload retVal="string[]" descr="&amp;#x0A;WP:&amp;#x20;Adds an additional class to the PHP nag if the current version is insecure.&amp;#x0A;&amp;#x0A;$classes&amp;#x20;Array of meta box classes.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string[]) Modified array of meta box classes.">
+        <Param name="string[] $classes"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="date_i18n" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the date in localized format, based on a sum of Unix timestamp and timezone&amp;#x0A;&amp;#x09;offset in seconds.&amp;#x0A;&amp;#x0A;$format&amp;#x20;Format to display the date.&amp;#x0A;&amp;#x0A;$timestamp_with_offset&amp;#x20;A sum of Unix timestamp and timezone offset in seconds.&amp;#x0A;&amp;#x0A;$gmt&amp;#x20;Whether to use GMT timezone. Only applies if timestamp is not provided.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The date, translated if locale specifies it.">
+        <Param name="string $format"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dbDelta" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Modifies the database based on specified SQL statements.&amp;#x0A;&amp;#x0A;$queries&amp;#x20;The query to run. Can be multiple queries in an array, or a string of queries&amp;#x0A;&amp;#x09;&amp;#x09;separated by semicolons.&amp;#x0A;&amp;#x0A;$execute&amp;#x20;Whether or not to execute the query right away.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) Strings containing the results of the various update queries.">
+        <Param name="[ string[] string $queries=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="deactivated_plugins_notice" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Renders an admin notice when a plugin was deactivated during an update.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="deactivate_plugins" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deactivate a single plugin or multiple plugins.&amp;#x0A;&amp;#x0A;$plugins&amp;#x20;Single plugin or list of plugins to deactivate.&amp;#x0A;&amp;#x0A;$silent&amp;#x20;Prevent calling deactivation hooks.&amp;#x0A;&amp;#x0A;$network_wide&amp;#x20;Whether to deactivate the plugin for all sites in the network. A value of null&amp;#x0A;&amp;#x09;&amp;#x09;will deactivate plugins for both the network and the current site. Multisite only.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string string[] $plugins"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="deactivate_sitewide_plugin" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deprecated functionality for deactivating a network-only plugin.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="dead_db" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load custom DB error or display WordPress DB error.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="debug_fclose" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Close the debugging file handle.&amp;#x0A;&amp;#x0A;$fp&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="mixed $fp"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="debug_fopen" func="yes">
+      <Overload retVal="false" descr="&amp;#x0A;WP:&amp;#x20;Open the file handle for debugging.&amp;#x0A;&amp;#x0A;$filename&amp;#x20;File name.&amp;#x0A;&amp;#x0A;$mode&amp;#x20;Type of access you required to the stream.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(false) Always false.">
+        <Param name="string $filename"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="debug_fwrite" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Write contents to the file used for debugging.&amp;#x0A;&amp;#x0A;$fp&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;$string&amp;#x20;Message to log.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="mixed $fp"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="default_password_nag" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="default_password_nag_edit_user" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$user_ID&amp;#x20;&amp;#x0A;&amp;#x0A;$old_data&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $user_ID"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="default_password_nag_handler" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;$errors&amp;#x20;Deprecated.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ false $errors=false]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="default_topic_count_scale" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Default topic count scaling for tag links.&amp;#x0A;&amp;#x0A;$count&amp;#x20;Number of posts with that tag.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Scaled count.">
+        <Param name="int $count"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="default_topic_count_text" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Old callback for tag link tooltips.&amp;#x0A;&amp;#x0A;$count&amp;#x20;Number of topics.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Number of topics.">
+        <Param name="int $count"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_all_user_settings" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deletes the user settings of the current user.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="delete_blog_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes option by name for a given blog ID. Prevents removal of protected WordPress&amp;#x0A;&amp;#x09;options.&amp;#x0A;&amp;#x0A;$id&amp;#x20;A blog ID. Can be null to refer to the current blog.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of option to remove. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was deleted, false otherwise.">
+        <Param name="int $id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_comment_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Remove metadata matching criteria from a comment.&amp;#x0A;&amp;#x0A;$comment_id&amp;#x20;Comment ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. If provided, rows will only be removed that match the value. Must&amp;#x0A;&amp;#x09;&amp;#x09;be serializable if non-scalar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $comment_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_expired_transients" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Deletes all expired transients.&amp;#x0A;&amp;#x0A;$force_db&amp;#x20;Force cleanup to run against the database even when an external object cache is used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ bool $force_db=false]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_get_calendar_cache" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Purge the cached results of get_calendar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="delete_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Delete post meta data by meta ID.&amp;#x0A;&amp;#x0A;$mid&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool)">
+        <Param name="int $mid"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_metadata" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes metadata for the specified object.&amp;#x0A;&amp;#x0A;$meta_type&amp;#x20;Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any&amp;#x0A;&amp;#x09;&amp;#x09;other object type with an associated meta table.&amp;#x0A;&amp;#x0A;$object_id&amp;#x20;ID of the object metadata is for.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata key.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. Must be serializable if non-scalar. If specified, only delete&amp;#x0A;&amp;#x09;&amp;#x09;metadata entries with this value. Otherwise, delete all entries with the specified meta_key. Pass&amp;#x0A;&amp;#x09;&amp;#x09;null, false, or an empty string to skip this check. (For backward compatibility, it is not possible&amp;#x0A;&amp;#x09;&amp;#x09;to pass an empty string to delete those entries with an empty string for a value.)&amp;#x0A;&amp;#x0A;$delete_all&amp;#x20;If true, delete matching metadata entries for all objects, ignoring the specified&amp;#x0A;&amp;#x09;&amp;#x09;object_id. Otherwise, only delete matching metadata entries for the specified object_id.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on successful delete, false on failure.">
+        <Param name="string $meta_type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_metadata_by_mid" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes metadata by meta ID.&amp;#x0A;&amp;#x0A;$meta_type&amp;#x20;Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any&amp;#x0A;&amp;#x09;&amp;#x09;other object type with an associated meta table.&amp;#x0A;&amp;#x0A;$meta_id&amp;#x20;ID for a specific meta row.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on successful delete, false on failure.">
+        <Param name="string $meta_type"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_network_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes a network option by name.&amp;#x0A;&amp;#x0A;$network_id&amp;#x20;ID of the network. Can be null to default to the current network ID.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to delete. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was deleted, false otherwise.">
+        <Param name="int $network_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes option by name. Prevents removal of protected WordPress options.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to delete. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was deleted, false otherwise.">
+        <Param name="string $option"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_plugins" func="yes">
+      <Overload retVal="bool|null|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Remove directory and files of a plugin for a list of plugins.&amp;#x0A;&amp;#x0A;$plugins&amp;#x20;List of plugin paths to delete, relative to the plugins directory.&amp;#x0A;&amp;#x0A;$deprecated&amp;#x20;Not used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool|null|WP_Error) True on success, false if $plugins is empty, WP_Error on failure. null if&amp;#x0A;&amp;#x09;&amp;#x09;filesystem credentials are required to proceed.">
+        <Param name="string[] $plugins"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_post_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes a post meta field for the given post ID.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. If provided, rows will only be removed that match the value. Must&amp;#x0A;&amp;#x09;&amp;#x09;be serializable if non-scalar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_post_meta_by_key" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes everything from post meta matching the given meta key.&amp;#x0A;&amp;#x0A;$post_meta_key&amp;#x20;Key to search for when deleting.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the post meta key was deleted from the database.">
+        <Param name="string $post_meta_key"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_post_thumbnail" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes the thumbnail (featured image) from the given post.&amp;#x0A;&amp;#x0A;$post&amp;#x20;Post ID or post object from which the thumbnail should be removed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_site_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes metadata matching criteria from a site.&amp;#x0A;&amp;#x0A;$site_id&amp;#x20;Site ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. If provided, rows will only be removed that match the value. Must&amp;#x0A;&amp;#x09;&amp;#x09;be serializable if non-scalar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $site_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_site_meta_by_key" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes everything from site meta matching meta key.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata key to search for when deleting.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the site meta key was deleted from the database.">
+        <Param name="string $meta_key"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_site_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes a option by name for the current network.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Name of the option to delete. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the option was deleted, false otherwise.">
+        <Param name="string $option"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_site_transient" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes a site transient.&amp;#x0A;&amp;#x0A;$transient&amp;#x20;Transient name. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the transient was deleted, false otherwise.">
+        <Param name="string $transient"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_term_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Removes metadata matching criteria from a term.&amp;#x0A;&amp;#x0A;$term_id&amp;#x20;Term ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. If provided, rows will only be removed that match the value. Must&amp;#x0A;&amp;#x09;&amp;#x09;be serializable if non-scalar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $term_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_theme" func="yes">
+      <Overload retVal="bool|null|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Remove a theme&amp;#x0A;&amp;#x0A;$stylesheet&amp;#x20;Stylesheet of the theme to delete.&amp;#x0A;&amp;#x0A;$redirect&amp;#x20;Redirect to page when complete.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool|null|WP_Error) True on success, false if $stylesheet is empty, WP_Error on failure. Null if&amp;#x0A;&amp;#x09;&amp;#x09;filesystem credentials are required to proceed.">
+        <Param name="string $stylesheet"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_transient" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Deletes a transient.&amp;#x0A;&amp;#x0A;$transient&amp;#x20;Transient name. Expected to not be SQL-escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if the transient was deleted, false otherwise.">
+        <Param name="string $transient"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_usermeta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Remove user meta data.&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata key.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True deletion completed and false if user_id is not a number.">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_users_add_js" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="delete_user_meta" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Remove metadata matching criteria from a user.&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata name.&amp;#x0A;&amp;#x0A;$meta_value&amp;#x20;Metadata value. If provided, rows will only be removed that match the value. Must&amp;#x0A;&amp;#x09;&amp;#x09;be serializable if non-scalar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_user_option" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Delete user option with global blog capability.&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID&amp;#x0A;&amp;#x0A;$option_name&amp;#x20;User option name.&amp;#x0A;&amp;#x0A;$global&amp;#x20;Whether option name is global or blog specific. Default false (blog specific).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True on success, false on failure.">
+        <Param name="int $user_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="delete_user_setting" func="yes">
+      <Overload retVal="bool|null" descr="&amp;#x0A;WP:&amp;#x20;Deletes user interface settings.&amp;#x0A;&amp;#x0A;$names&amp;#x20;The name or array of names of the setting to be deleted.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool|null) True if deleted successfully, false otherwise. Null if the current user is not a member&amp;#x0A;&amp;#x09;&amp;#x09;of the site.">
+        <Param name="string $names"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="deslash" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Filters for content to remove unnecessary slashes.&amp;#x0A;&amp;#x0A;$content&amp;#x20;The content to modify.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The de-slashed content.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="determine_locale" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Determine the current locale desired for the request.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The determined locale."/>
+    </KeyWord>
+    <KeyWord name="did_action" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Retrieves the number of times an action has been fired during the current request.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the action hook.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) The number of times the action hook has been fired.">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="disabled" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Outputs the HTML disabled attribute.&amp;#x0A;&amp;#x0A;$disabled&amp;#x20;One of the values to compare&amp;#x0A;&amp;#x0A;$current&amp;#x20;(true) The other value to compare if not just true&amp;#x0A;&amp;#x0A;$echo&amp;#x20;Whether to echo or just return the string&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) HTML attribute or empty string">
+        <Param name="mixed $disabled"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="discover_pingback_server_uri" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Finds a pingback server URI based on the given URL.&amp;#x0A;&amp;#x0A;$url&amp;#x20;URL to ping.&amp;#x0A;&amp;#x0A;$deprecated&amp;#x20;Not Used.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) String containing URI on success, false on failure.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dismissed_updates" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display dismissed updates.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="dismiss_core_update" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Dismisses core update.&amp;#x0A;&amp;#x0A;$update&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool)">
+        <Param name="object $update"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="display_header" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display installation header.&amp;#x0A;&amp;#x0A;$body_classes&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $body_classes='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="display_header_text" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Whether to display the header text.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool)"/>
+    </KeyWord>
+    <KeyWord name="display_plugins_table" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display plugin content based on plugin list.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="display_setup_form" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display installer setup form.&amp;#x0A;&amp;#x0A;$error&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string null $error=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="display_space_usage" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the amount of disk space used by the current site. Not used in core.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="display_theme" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Prints a theme on the Install Themes pages.&amp;#x0A;&amp;#x0A;$theme&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="object $theme"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="display_themes" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display theme content based on theme list.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="documentation_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Unused Admin function.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="doing_action" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Returns whether or not an action hook is currently being processed.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;Action hook to check. Defaults to null, which checks if any action is currently&amp;#x0A;&amp;#x09;&amp;#x09;being run.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the action is currently in the stack.">
+        <Param name="[ string null $hook_name=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="doing_filter" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Returns whether or not a filter hook is currently being processed.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;Filter hook to check. Defaults to null, which checks if any filter is currently&amp;#x0A;&amp;#x09;&amp;#x09;being run.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) Whether the filter is currently in the stack.">
+        <Param name="[ null string $hook_name=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="domain_exists" func="yes">
+      <Overload retVal="int|null" descr="&amp;#x0A;WP:&amp;#x20;Checks whether a site name is already taken.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;The domain to be checked.&amp;#x0A;&amp;#x0A;$path&amp;#x20;The path to be checked.&amp;#x0A;&amp;#x0A;$network_id&amp;#x20;Network ID. Relevant only on multi-network installations.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|null) The site ID if the site name exists, null otherwise.">
+        <Param name="string $domain"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="download_url" func="yes">
+      <Overload retVal="string|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Downloads a URL to a local temporary file using the WordPress HTTP API.&amp;#x0A;&amp;#x0A;$url&amp;#x20;The URL of the file to download.&amp;#x0A;&amp;#x0A;$timeout&amp;#x20;The timeout for the request to download the file. Default 300 seconds.&amp;#x0A;&amp;#x0A;$signature_verification&amp;#x20;Whether to perform Signature Verification.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|WP_Error) Filename on success, WP_Error on failure.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_accordion_sections" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Meta Box Accordion Template Function.&amp;#x0A;&amp;#x0A;$screen&amp;#x20;The screen identifier.&amp;#x0A;&amp;#x0A;$context&amp;#x20;The screen context for which to display accordion sections.&amp;#x0A;&amp;#x0A;$object&amp;#x20;Gets passed to the section callback function as the first parameter.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Number of meta boxes as accordion sections.">
+        <Param name="string object $screen"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_action" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Calls the callback functions that have been added to an action hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the action to be executed.&amp;#x0A;&amp;#x0A;$arg&amp;#x20;Additional arguments which are passed on to the functions hooked to the action. Default&amp;#x0A;&amp;#x09;&amp;#x09;empty.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_action_deprecated" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Fires functions attached to a deprecated action hook.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the action hook.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Array of additional function arguments to be passed to do_action().&amp;#x0A;&amp;#x0A;$version&amp;#x20;The version of WordPress that deprecated the hook.&amp;#x0A;&amp;#x0A;$replacement&amp;#x20;The hook that should have been used.&amp;#x0A;&amp;#x0A;$message&amp;#x20;A message regarding the change.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_action_ref_array" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Calls the callback functions that have been added to an action hook, specifying&amp;#x0A;&amp;#x09;arguments in an array.&amp;#x0A;&amp;#x0A;$hook_name&amp;#x20;The name of the action to be executed.&amp;#x0A;&amp;#x0A;$args&amp;#x20;The arguments supplied to the functions hooked to $hook_name.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $hook_name"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_activate_header" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Adds an action hook specific to this page.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_all_enclosures" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Perform all enclosures.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_all_pingbacks" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Perform all pingbacks.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_all_pings" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Perform all pingbacks, enclosures, trackbacks, and send to pingback services.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_all_trackbacks" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Perform all trackbacks.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_blocks" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Parses dynamic blocks out of post_content and re-renders them.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Post content.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Updated post content.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_block_editor_incompatible_meta_box" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Function that renders a “fake” meta box with an information message, shown on the&amp;#x0A;&amp;#x09;block editor, when an incompatible meta box is found.&amp;#x0A;&amp;#x0A;$object&amp;#x20;The data object being rendered on this screen.&amp;#x0A;&amp;#x0A;$box&amp;#x20;Custom formats meta box arguments. 'id'(string) Meta box 'id' attribute. 'title'(string)&amp;#x0A;&amp;#x09;&amp;#x09;Meta box title. 'old_callback'(callable) The original callback for this meta box. 'args'(array)&amp;#x0A;&amp;#x09;&amp;#x09;Extra meta box arguments.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="mixed $object"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_core_upgrade" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Upgrade WordPress core display.&amp;#x0A;&amp;#x0A;$reinstall&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ bool $reinstall=false]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_dismiss_core_update" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Dismiss a core update.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_enclose" func="yes">
+      <Overload retVal="void|false" descr="&amp;#x0A;WP:&amp;#x20;Check content for video and audio links to add as enclosures.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Post content. If null, the post_content field from $post is used.&amp;#x0A;&amp;#x0A;$post&amp;#x20;Post ID or post object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void|false) Void on success, false if the post is not found.">
+        <Param name="string null $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_favicon" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the favicon.ico file content.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_feed" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load the feed template from the use of an action hook.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_feed_atom" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load either Atom comment feed or Atom posts feed.&amp;#x0A;&amp;#x0A;$for_comments&amp;#x20;True for the comment feed, false for normal feed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="bool $for_comments"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_feed_rdf" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load the RDF RSS 0.91 Feed template.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_feed_rss" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load the RSS 1.0 Feed Template.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_feed_rss2" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Load either the RSS2 comment feed or the RSS2 posts feed.&amp;#x0A;&amp;#x0A;$for_comments&amp;#x20;True for the comment feed, false for normal feed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="bool $for_comments"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_meta_boxes" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Meta-Box template function.&amp;#x0A;&amp;#x0A;$screen&amp;#x20;The screen identifier. If you have used add_menu_page() or add_submenu_page() to create&amp;#x0A;&amp;#x09;&amp;#x09;a new screen (and hence screen_id) make sure your menu slug conforms to the limits of sanitize_key()&amp;#x0A;&amp;#x09;&amp;#x09;otherwise the 'screen' menu may not correctly render on your page.&amp;#x0A;&amp;#x0A;$context&amp;#x20;The screen context for which to display meta boxes.&amp;#x0A;&amp;#x0A;$object&amp;#x20;Gets passed to the meta box callback function as the first parameter. Often this is the&amp;#x0A;&amp;#x09;&amp;#x09;object that's the focus of the current screen, for example a WP_Post or WP_Comment object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Number of meta_boxes.">
+        <Param name="string WP_Screen $screen"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_robots" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the default robots.txt file content.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_settings_fields" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Print out the settings fields for a particular settings section.&amp;#x0A;&amp;#x0A;$page&amp;#x20;Slug title of the admin page whose settings fields you want to show.&amp;#x0A;&amp;#x0A;$section&amp;#x20;Slug title of the settings section whose fields you want to show.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $page"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_settings_sections" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Prints out all settings sections added to a particular settings page&amp;#x0A;&amp;#x0A;$page&amp;#x20;The slug name of the page whose settings sections you want to output.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $page"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_shortcode" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Search content for shortcodes and filter shortcodes through their hooks.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Content to search for shortcodes.&amp;#x0A;&amp;#x0A;$ignore_html&amp;#x20;When true, shortcodes inside HTML elements will be skipped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Content with shortcodes filtered out.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_shortcodes_in_html_tags" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Search only inside HTML elements for shortcodes and process them.&amp;#x0A;&amp;#x0A;$content&amp;#x20;Content to search for shortcodes.&amp;#x0A;&amp;#x0A;$ignore_html&amp;#x20;When true, all square braces inside elements will be encoded.&amp;#x0A;&amp;#x0A;$tagnames&amp;#x20;List of shortcodes to find.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Content with shortcodes filtered out.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_shortcode_tag" func="yes">
+      <Overload retVal="string|false" descr="&amp;#x0A;WP:&amp;#x20;Regular Expression callable for do_shortcode() for calling shortcode hook.&amp;#x0A;&amp;#x0A;$m&amp;#x20;Regular expression match array.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|false) Shortcode output on success, false on failure.">
+        <Param name="array $m"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_signup_header" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Prints signup_header via wp_head&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="do_trackbacks" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Perform trackbacks.&amp;#x0A;&amp;#x0A;$post_id&amp;#x20;Post object or ID to do trackbacks on.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int WP_Post $post_id"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="do_undismiss_core_update" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Undismiss a core update.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="dropdown_categories" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Legacy function used to generate the categories checklist control.&amp;#x0A;&amp;#x0A;$default&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;$parent&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;$popular_ids&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $default"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dropdown_cats" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Deprecated method for generating a drop-down of categories.&amp;#x0A;&amp;#x0A;$optionall&amp;#x20;&amp;#x0A;&amp;#x0A;$all&amp;#x20;&amp;#x0A;&amp;#x0A;$orderby&amp;#x20;&amp;#x0A;&amp;#x0A;$order&amp;#x20;&amp;#x0A;&amp;#x0A;$show_last_update&amp;#x20;&amp;#x0A;&amp;#x0A;$show_count&amp;#x20;&amp;#x0A;&amp;#x0A;$hide_empty&amp;#x20;&amp;#x0A;&amp;#x0A;$optionnone&amp;#x20;&amp;#x0A;&amp;#x0A;$selected&amp;#x20;&amp;#x0A;&amp;#x0A;$exclude&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="[ int $optionall=1"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dropdown_link_categories" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Legacy function used to generate a link categories checklist control.&amp;#x0A;&amp;#x0A;$default&amp;#x20;Unused.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="int $default"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="drop_index" func="yes">
+      <Overload retVal="true" descr="&amp;#x0A;WP:&amp;#x20;Drops a specified index from a table.&amp;#x0A;&amp;#x0A;$table&amp;#x20;Database table name.&amp;#x0A;&amp;#x0A;$index&amp;#x20;Index name to drop.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(true) True, when finished.">
+        <Param name="string $table"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="dynamic_sidebar" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Display dynamic sidebar.&amp;#x0A;&amp;#x0A;$index&amp;#x20;Index, name or ID of dynamic sidebar.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True, if widget sidebar was found and called. False if not found or not called.">
+        <Param name="[ int string $index=1]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_bookmark_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the edit bookmark link anchor content.&amp;#x0A;&amp;#x0A;$link&amp;#x20;Anchor text. If empty, default is 'Edit This'.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Display before edit link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Display after edit link.&amp;#x0A;&amp;#x0A;$bookmark&amp;#x20;Bookmark ID. Default is the current bookmark.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $link=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_comment" func="yes">
+      <Overload retVal="int|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Update a comment with values provided in $_POST.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|WP_Error) The value 1 if the comment was updated, 0 if not updated. A WP_Error object on&amp;#x0A;&amp;#x09;&amp;#x09;failure."/>
+    </KeyWord>
+    <KeyWord name="edit_comment_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the edit comment link with formatting.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Anchor text. If null, default is 'Edit This'.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Display before edit link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Display after edit link.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $text=null"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_form_image_editor" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the image and editor in the post editor&amp;#x0A;&amp;#x0A;$post&amp;#x20;A post object.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="WP_Post $post"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_link" func="yes">
+      <Overload retVal="int|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Updates or inserts a link using values provided in $_POST.&amp;#x0A;&amp;#x0A;$link_id&amp;#x20;ID of the link to edit. Default 0.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|WP_Error) Value 0 or WP_Error on failure. The link ID on success.">
+        <Param name="[ int $link_id]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_post" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Update an existing post with values provided in $_POST.&amp;#x0A;&amp;#x0A;$post_data&amp;#x20;Defaults to the $_POST global.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Post ID.">
+        <Param name="[ array $post_data=null]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_post_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays the edit post link for post.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Anchor text. If null, default is 'Edit This'.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Display before edit link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Display after edit link.&amp;#x0A;&amp;#x0A;$id&amp;#x20;Post ID or post object. Default is the global $post.&amp;#x0A;&amp;#x0A;$class&amp;#x20;Add custom class to link.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $text=null"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_tag_link" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Displays or retrieves the edit link for a tag with formatting.&amp;#x0A;&amp;#x0A;$link&amp;#x20;Anchor text. If empty, default is 'Edit This'.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Display before edit link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Display after edit link.&amp;#x0A;&amp;#x0A;$tag&amp;#x20;Term object. If null, the queried object will be inspected.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $link=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_term_link" func="yes">
+      <Overload retVal="string|void" descr="&amp;#x0A;WP:&amp;#x20;Displays or retrieves the edit term link with formatting.&amp;#x0A;&amp;#x0A;$link&amp;#x20;Anchor text. If empty, default is 'Edit This'.&amp;#x0A;&amp;#x0A;$before&amp;#x20;Display before edit link.&amp;#x0A;&amp;#x0A;$after&amp;#x20;Display after edit link.&amp;#x0A;&amp;#x0A;$term&amp;#x20;Term object. If null, the queried object will be inspected.&amp;#x0A;&amp;#x0A;$echo&amp;#x20;Whether or not to echo the return.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|void) HTML content.">
+        <Param name="[ string $link=''"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="edit_user" func="yes">
+      <Overload retVal="int|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Edit user settings based on contents of $_POST&amp;#x0A;&amp;#x0A;$user_id&amp;#x20;User ID.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|WP_Error) User ID of the updated user.">
+        <Param name="[ int $user_id]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="email_exists" func="yes">
+      <Overload retVal="int|false" descr="&amp;#x0A;WP:&amp;#x20;Determines whether the given email exists.&amp;#x0A;&amp;#x0A;$email&amp;#x20;The email to check for existence.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int|false) The user ID on success, false on failure.">
+        <Param name="string $email"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="endElement" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;XML callback function that is called at the end of a XML tag.&amp;#x0A;&amp;#x0A;$parser&amp;#x20;XML Parser resource.&amp;#x0A;&amp;#x0A;$tag_name&amp;#x20;XML tag name.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="resource $parser"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="enqueue_block_styles_assets" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Function responsible for enqueuing the styles required for block styles functionality&amp;#x0A;&amp;#x09;on the editor and on the frontend.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="enqueue_comment_hotkeys_js" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="enqueue_editor_block_styles_assets" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Function responsible for enqueuing the assets required for block styles functionality&amp;#x0A;&amp;#x09;on the editor.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="enqueue_embed_scripts" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Enqueues embed iframe default CSS and JS.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="ent2ncr" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Converts named entities into numbered entities.&amp;#x0A;&amp;#x0A;$text&amp;#x20;The text within which entities will be converted.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Text with converted entities.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_attr" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escaping for HTML attributes.&amp;#x0A;&amp;#x0A;$text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_attr_e" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display translated text that has been escaped for safe use in an attribute.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_attr_x" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Translate string with gettext context, and escapes it for safe use in an attribute.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$context&amp;#x20;Context information for the translators.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Translated text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_attr__" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieve the translation of $text and escapes it for safe use in an attribute.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Translated text on success, original text on failure.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_html" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escaping for HTML blocks.&amp;#x0A;&amp;#x0A;$text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_html_e" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display translated text that has been escaped for safe use in HTML output.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_html_x" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Translate string with gettext context, and escapes it for safe use in HTML output.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$context&amp;#x20;Context information for the translators.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Translated text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_html__" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Retrieve the translation of $text and escapes it for safe use in HTML output.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to translate.&amp;#x0A;&amp;#x0A;$domain&amp;#x20;Text domain. Unique identifier for retrieving translated strings.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Translated text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_js" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escape single quotes, htmlspecialchar ” &amp;, and fix line endings.&amp;#x0A;&amp;#x0A;$text&amp;#x20;The text to be escaped.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Escaped text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_sql" func="yes">
+      <Overload retVal="string|array" descr="&amp;#x0A;WP:&amp;#x20;Escapes data for use in a MySQL query.&amp;#x0A;&amp;#x0A;$data&amp;#x20;Unescaped data&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string|array) Escaped data">
+        <Param name="string array $data"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_textarea" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escaping for textarea values.&amp;#x0A;&amp;#x0A;$text&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string)">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_url" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Checks and cleans a URL.&amp;#x0A;&amp;#x0A;$url&amp;#x20;The URL to be cleaned.&amp;#x0A;&amp;#x0A;$protocols&amp;#x20;An array of acceptable protocols. Defaults to return value of&amp;#x0A;&amp;#x09;&amp;#x09;wp_allowed_protocols().&amp;#x0A;&amp;#x0A;$_context&amp;#x20;Private. Use esc_url_raw() for database usage.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The cleaned URL after the 'clean_url' filter is applied. An empty string is returned if&amp;#x0A;&amp;#x09;&amp;#x09;$url specifies a protocol other than those in $protocols, or if $url contains an empty&amp;#x0A;string.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_url_raw" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Performs esc_url() for database usage.&amp;#x0A;&amp;#x0A;$url&amp;#x20;The URL to be cleaned.&amp;#x0A;&amp;#x0A;$protocols&amp;#x20;An array of acceptable protocols. Defaults to return value of&amp;#x0A;&amp;#x09;&amp;#x09;wp_allowed_protocols().&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The cleaned URL after esc_url() is run with the 'db' context.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="esc_xml" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Escaping for XML blocks.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text to escape.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) Escaped text.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="excerpt_remove_blocks" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Parses blocks out of a content string, and renders those appropriate for the excerpt.&amp;#x0A;&amp;#x0A;$content&amp;#x20;The content to parse.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The parsed and filtered content.">
+        <Param name="string $content"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="export_add_js" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display JavaScript on the page.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="export_date_options" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Create the date options fields for exporting a given post type.&amp;#x0A;&amp;#x0A;$post_type&amp;#x20;The post type.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $post_type='post']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="export_wp" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Generates the WXR export file for download.&amp;#x0A;&amp;#x0A;$args&amp;#x20;Arguments for generating the WXR export file for download. 'content'(string) Type of&amp;#x0A;&amp;#x09;&amp;#x09;content to export. If set, only the post content of this post type will be exported. Accepts 'all',&amp;#x0A;&amp;#x09;&amp;#x09;'post', 'page', 'attachment', or a defined custom post. If an invalid custom post type is supplied,&amp;#x0A;&amp;#x09;&amp;#x09;every post type for which can_export is enabled will be exported instead. If a valid custom post&amp;#x0A;&amp;#x09;&amp;#x09;type is supplied but can_export is disabled, then 'posts' will be exported instead. When 'all' is&amp;#x0A;&amp;#x09;&amp;#x09;supplied, only post types with can_export enabled will be exported. Default 'all'. 'author'(string)&amp;#x0A;&amp;#x09;&amp;#x09;Author to export content for. Only used when $content is 'post', 'page', or 'attachment'. Accepts&amp;#x0A;&amp;#x09;&amp;#x09;false (all) or a specific author ID. Default false (all). 'category'(string) Category (slug) to&amp;#x0A;&amp;#x09;&amp;#x09;export content for. Used only when $content is 'post'. If set, only post content assigned to&amp;#x0A;&amp;#x09;&amp;#x09;$category will be exported. Accepts false or a specific category slug. Default is false (all&amp;#x0A;&amp;#x09;&amp;#x09;categories). 'start_date'(string) Start date to export content from. Expected date format is&amp;#x0A;&amp;#x09;&amp;#x09;'Y-m-d'. Used only when $content is 'post', 'page' or 'attachment'. Default false (since the&amp;#x0A;&amp;#x09;&amp;#x09;beginning of time). 'end_date'(string) End date to export content to. Expected date format is&amp;#x0A;&amp;#x09;&amp;#x09;'Y-m-d'. Used only when $content is 'post', 'page' or 'attachment'. Default false (latest publish&amp;#x0A;&amp;#x09;&amp;#x09;date). 'status'(string) Post status to export posts for. Used only when $content is 'post' or&amp;#x0A;&amp;#x09;&amp;#x09;'page'. Accepts false (all statuses except 'auto-draft'), or a specific status, i.e. 'publish',&amp;#x0A;&amp;#x09;&amp;#x09;'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', or 'trash'. Default false (all&amp;#x0A;&amp;#x09;&amp;#x09;statuses except 'auto-draft').&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array $args=array()]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="extract_from_markers" func="yes">
+      <Overload retVal="string[]" descr="&amp;#x0A;WP:&amp;#x20;Extracts strings from between the BEGIN and END markers in the.htaccess file.&amp;#x0A;&amp;#x0A;$filename&amp;#x20;Filename to extract the strings from.&amp;#x0A;&amp;#x0A;$marker&amp;#x20;The marker to extract the strings from.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string[]) An array of strings from a file (.htaccess) from between BEGIN and END markers.">
+        <Param name="string $filename"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="favorite_actions" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Favorite actions were deprecated in version 3.2. Use the admin bar instead.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)"/>
+    </KeyWord>
+    <KeyWord name="feed_content_type" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Return the content type for specified feed type.&amp;#x0A;&amp;#x0A;$type&amp;#x20;Type of feed. Possible values include 'rss', rss2', 'atom', and 'rdf'.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $type='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="feed_links" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the links to the general feeds.&amp;#x0A;&amp;#x0A;$args&amp;#x20;arguments.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array $args=array()]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="feed_links_extra" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Display the links to the extra feeds such as category feeds.&amp;#x0A;&amp;#x0A;$args&amp;#x20;arguments.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ array $args=array()]"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="fetch_feed" func="yes">
+      <Overload retVal="SimplePie|WP_Error" descr="&amp;#x0A;WP:&amp;#x20;Build SimplePie object based on RSS or Atom feed from URL.&amp;#x0A;&amp;#x0A;$url&amp;#x20;URL of feed to retrieve. If an array of URLs, the feeds are merged using SimplePie's&amp;#x0A;&amp;#x09;&amp;#x09;multifeed feature. See also http://simplepie.org/wiki/faq/typical_multifeed_gotchas&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(SimplePie|WP_Error) SimplePie object on success or WP_Error object on failure.">
+        <Param name="string string[] $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="fetch_rss" func="yes">
+      <Overload retVal="MagpieRSS|false" descr="&amp;#x0A;WP:&amp;#x20;Build Magpie object based on RSS from URL.&amp;#x0A;&amp;#x0A;$url&amp;#x20;URL to retrieve feed.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(MagpieRSS|false) MagpieRSS object on success, false on failure.">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="file_is_displayable_image" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Validate that file is suitable for displaying within a web page.&amp;#x0A;&amp;#x0A;$path&amp;#x20;File path to test.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if suitable, false if not suitable.">
+        <Param name="string $path"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="file_is_valid_image" func="yes">
+      <Overload retVal="bool" descr="&amp;#x0A;WP:&amp;#x20;Validate that file is an image.&amp;#x0A;&amp;#x0A;$path&amp;#x20;File path to test if valid image.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(bool) True if valid image, false if not valid image.">
+        <Param name="string $path"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_block_content" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Filters and sanitizes block content to remove non-allowable HTML from parsed block&amp;#x0A;&amp;#x09;attribute values.&amp;#x0A;&amp;#x0A;$text&amp;#x20;Text that may contain block content.&amp;#x0A;&amp;#x0A;$allowed_html&amp;#x20;An array of allowed HTML elements and attributes, or a context name such as&amp;#x0A;&amp;#x09;&amp;#x09;'post'.&amp;#x0A;&amp;#x0A;$allowed_protocols&amp;#x20;Array of allowed URL protocols.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) The filtered and sanitized content result.">
+        <Param name="string $text"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_block_kses" func="yes">
+      <Overload retVal="array" descr="&amp;#x0A;WP:&amp;#x20;Filters and sanitizes a parsed block to remove non-allowable HTML from block&amp;#x0A;&amp;#x09;attribute values.&amp;#x0A;&amp;#x0A;$block&amp;#x20;The parsed block object.&amp;#x0A;&amp;#x0A;$allowed_html&amp;#x20;An array of allowed HTML elements and attributes, or a context name such as&amp;#x0A;&amp;#x09;&amp;#x09;'post'.&amp;#x0A;&amp;#x0A;$allowed_protocols&amp;#x20;Allowed URL protocols.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(array) The filtered and sanitized block object result.">
+        <Param name="WP_Block_Parser_Block $block"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_block_kses_value" func="yes">
+      <Overload retVal="string[]|string" descr="&amp;#x0A;WP:&amp;#x20;Filters and sanitizes a parsed block attribute value to remove non-allowable HTML.&amp;#x0A;&amp;#x0A;$value&amp;#x20;The attribute value to filter.&amp;#x0A;&amp;#x0A;$allowed_html&amp;#x20;An array of allowed HTML elements and attributes, or a context name such as&amp;#x0A;&amp;#x09;&amp;#x09;'post'.&amp;#x0A;&amp;#x0A;$allowed_protocols&amp;#x20;Array of allowed URL protocols.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string[]|string) The filtered and sanitized result.">
+        <Param name="string[] string $value"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_default_metadata" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Filters into default_{$object_type}_metadata and adds in default value.&amp;#x0A;&amp;#x0A;$value&amp;#x20;Current value passed to filter.&amp;#x0A;&amp;#x0A;$object_id&amp;#x20;ID of the object metadata is for.&amp;#x0A;&amp;#x0A;$meta_key&amp;#x20;Metadata key.&amp;#x0A;&amp;#x0A;$single&amp;#x20;If true, return only the first value of the specified $meta_key. This parameter has no&amp;#x0A;&amp;#x09;&amp;#x09;effect if $meta_key is not specified.&amp;#x0A;&amp;#x0A;$meta_type&amp;#x20;Type of object metadata is for. Accepts 'post', 'comment', 'term', 'user', or any&amp;#x0A;&amp;#x09;&amp;#x09;other object type with an associated meta table.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed) An array of default values if $single is false. The default value of the meta field if&amp;#x0A;&amp;#x09;&amp;#x09;$single is true.">
+        <Param name="mixed $value"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_default_option" func="yes">
+      <Overload retVal="mixed" descr="&amp;#x0A;WP:&amp;#x20;Filters the default value for the option.&amp;#x0A;&amp;#x0A;$default&amp;#x20;Existing default value to return.&amp;#x0A;&amp;#x0A;$option&amp;#x20;Option name.&amp;#x0A;&amp;#x0A;$passed_default&amp;#x20;Was get_option() passed a default value?&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(mixed) Filtered default value.">
+        <Param name="mixed $default"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="filter_SSL" func="yes">
+      <Overload retVal="string" descr="&amp;#x0A;WP:&amp;#x20;Formats a URL to use https.&amp;#x0A;&amp;#x0A;$url&amp;#x20;URL&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(string) URL with https as the scheme">
+        <Param name="string $url"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="find_core_auto_update" func="yes">
+      <Overload retVal="object|false" descr="&amp;#x0A;WP:&amp;#x20;Gets the best available (and enabled) Auto-Update for WordPress core.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(object|false) The core update offering on success, false on failure."/>
+    </KeyWord>
+    <KeyWord name="find_core_update" func="yes">
+      <Overload retVal="object|false" descr="&amp;#x0A;WP:&amp;#x20;Finds the available update for WordPress core.&amp;#x0A;&amp;#x0A;$version&amp;#x20;Version string to find the update for.&amp;#x0A;&amp;#x0A;$locale&amp;#x20;Locale to find the update for.&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(object|false) The core update offering on success, false on failure.">
+        <Param name="string $version"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="find_posts_div" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Outputs the modal window used for attaching media to posts or pages in the&amp;#x0A;&amp;#x09;media-listing screen.&amp;#x0A;&amp;#x0A;$found_action&amp;#x20;&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="[ string $found_action='']"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="fix_import_form_size" func="yes">
+      <Overload retVal="int" descr="&amp;#x0A;WP:&amp;#x20;Get the remaining upload space for this site.&amp;#x0A;&amp;#x0A;$size&amp;#x20;Current max size in bytes&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(int) Max size in bytes">
+        <Param name="int $size"/>
+      </Overload>
+    </KeyWord>
+    <KeyWord name="fix_phpmailer_messageid" func="yes">
+      <Overload retVal="void" descr="&amp;#x0A;WP:&amp;#x20;Correct From host on outgoing mail to match the site domain&amp;#x0A;&amp;#x0A;$phpmailer&amp;#x20;The PHPMailer instance (passed by reference).&amp;#x0A;&amp;#x0A;Returns:&amp;#x20;&amp;#x0A;(void)">
+        <Param name="PHPMailer $phpmailer"/>
+      </Overload>
+    </KeyWord>
+  </AutoComplete>
+</NotepadPlus>
