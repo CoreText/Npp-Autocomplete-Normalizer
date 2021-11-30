@@ -1,4 +1,4 @@
-# Npp-Autocomplete-Normilizer
+# Npp-Autocomplete-Normalizer
 
 Used for cleaning Notepad++ autocomplete files `*.xml`, by sorting items, removing duplicates, and document formatting. 
 
@@ -12,4 +12,6 @@ On the right pane you'll see the normalized version of your autocomplete file.
 
 The generated XML file location is `dist/php.xml`
 
-You can find dummy example parser on how to get keywords from official WP documentation - just run `php run.php` to download
+## Bonus Feature
+
+You can find dummy example parser (`parsers/wp_parse_docs.php`) on how to get keywords from official WP documentation - just run `php run.php` to download
