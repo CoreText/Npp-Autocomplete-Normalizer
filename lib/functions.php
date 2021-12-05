@@ -103,9 +103,7 @@ function array2xml($data, &$xmlData) {
                         if (isset($value['Param']['@attributes'])) {
                             $subnode = $param = $overload->addChild('Param');
                             $param->addAttribute('name', $value['Param']['@attributes']['name']);
-
                         }
-
                     }
                 }
                 else {
@@ -641,7 +639,7 @@ function setupEnvironmentAttributes(SimpleXMLElement $xmlData): SimpleXMLElement
     return $xmlData;
 }
 
-function getTheKeyWordName($text) {
+function getTheKeyWordName(string $text): string {
     return substr($text, 0, strpos($text, '('));
 }
 
@@ -691,7 +689,7 @@ function trimLeadingSpaces(string $text, $with = ''): string {
 }
 
 /**
- * Replace first string occurance.
+ * Replace first string occurrence.
  *
  * @param string $str
  * @param string $findStr
@@ -700,7 +698,13 @@ function trimLeadingSpaces(string $text, $with = ''): string {
  * @param string $sanitizeStrWith  clean string after replacements with string
  * @return string
  */
-function replaceFirstMatch(string $str, string $findStr, string $replaceWith = '', string $sanitizeStr = '', string $sanitizeStrWith = ''): string {
+function replaceFirstMatch(
+    string $str,
+    string $findStr,
+    string $replaceWith = '',
+    string $sanitizeStr = '',
+    string $sanitizeStrWith = ''
+    ): string {
     $pos = strpos($str, $findStr);
 
     if ($pos !== false) {

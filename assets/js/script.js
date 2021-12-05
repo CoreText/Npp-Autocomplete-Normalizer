@@ -62,7 +62,7 @@ var targets = document.querySelectorAll('.sticky-header, .scroll-to-top-btn');
         else {
           header.classList.add('sticky')
         }
-        
+
       }
     });
   }
@@ -75,7 +75,7 @@ var targets = document.querySelectorAll('.sticky-header, .scroll-to-top-btn');
 function launch() {
   var text1 = document.getElementById('left').value;
   var text2 = document.getElementById('right').value;
-  
+
   var dmp = new diff_match_patch();
   dmp.Diff_Timeout = 0;
 
