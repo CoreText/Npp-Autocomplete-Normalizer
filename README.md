@@ -30,7 +30,7 @@ With the help of this example it's possible to download faster any keywords and 
 To run this parser you will need:
 
  * Zeal docs could be downloaded from here https://zealdocs.org/
- * Create symbolic link of `docsets/` folder and place it inside the `zeal.docs` host folder that should be served.
+ * Create symbolic link of `docsets/` folder and place it inside the `zeal.docs/` host folder that should be served.
  * Run the web server to serve the pages.
  * Remove file's content from `tmp/tmp.xml` and clear the `logs/logging.log`, or delete and create new ones.
  * Run the parser `php run.php`
