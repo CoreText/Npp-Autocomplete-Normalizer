@@ -32,7 +32,7 @@ To run this parser you will need:
  * Zeal docs could be downloaded from here https://zealdocs.org/
  * Create symbolic link of `docsets/` folder and place it inside the `zeal.docs` host folder that should be served.
  * Run the web server to serve the pages.
- * Remove file's content from `tmp/tmp.xml` and clear the `logs/logging.log`
+ * Remove file's content from `tmp/tmp.xml` and clear the `logs/logging.log`, or delete and create new ones.
  * Run the parser `php run.php`
  * The result file you can find here `dist/php.net/php.xml`
  * When the parser will finish it's work - copy the result file to `src/php.xml` and run `php index.php` to normalize it's content.
