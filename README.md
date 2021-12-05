@@ -12,7 +12,7 @@ On the right pane you'll see the normalized version of your autocomplete file.
 
 The generated XML file location `dist/php.xml`
 
-## Bonus Features
+## Bonus Features (PHP)
 
 1. You can find dummy example parser (`parsers/wp_parse_docs.php`) on how to get keywords from official WP documentation. Just comment out line like so:
 ```
