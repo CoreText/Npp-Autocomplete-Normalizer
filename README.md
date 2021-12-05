@@ -1,6 +1,6 @@
 # Npp-Autocomplete-Normalizer
 
-Used for cleaning Notepad++ autocomplete files `*.xml`, by sorting items, removing duplicates, and document formatting.
+Clean Notepad++ autocomplete files `*.xml`, by sorting items, removing duplicates, and document formatting.
 
 ## Installation
 
@@ -25,7 +25,7 @@ in `run.php` and then run:
 to download the functions from the docs.
 
 2. Second parser was done to get all functions from the php.net docs. There were about ~8,500 functions, so I installed <a href="https://zealdocs.org/" target="_blank">Zeal docs</a> locally and parsed data from the local web server.
-With the help of this example it's possible to download faster any docs for the popular languages and frameworks.
+With the help of this example it's possible to download faster any keywords and docs from the popular languages and frameworks.
 
 To run this parser you will need:
 
