@@ -1,5 +1,8 @@
 <?php
+
+// if you want to see warnings comment next line
 error_reporting(E_ALL ^ E_WARNING);
+
 require_once(BASE_DIR . '/lib/XmlValidator.php');
 
 global $autoCompleteEnvironmentAttributes;
@@ -111,7 +114,6 @@ function array2xml($data, &$xmlData) {
                         foreach ($data['Overload'] as $overloadKey => $overloadVal) {
                             $overload->attributes()->retVal = (string)$overloadVal->attributes()->retVal;
                             $overload->attributes()->descr = (string)$overloadVal->attributes()->descr;
-                            $overload->attributes()->wat = '';
                         }
                     }
                 }

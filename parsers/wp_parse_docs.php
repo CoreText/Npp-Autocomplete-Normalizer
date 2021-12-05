@@ -11,7 +11,7 @@ global $fileTemp;
 global $fileSrc;
 global $xmlTemplate;
 
-$fileDist = BASE_DIR . DIRECTORY_SEPARATOR . 'dist'. DIRECTORY_SEPARATOR . 'wp' . DIRECTORY_SEPARATOR . 'php.xml';
+$fileDist = BASE_DIR . DIRECTORY_SEPARATOR .'dist'. DIRECTORY_SEPARATOR .'wp'. DIRECTORY_SEPARATOR .'php.xml';
 
 
 Logger::info('started');
@@ -36,8 +36,8 @@ function wpParseDocs(array $links, SimpleXMLElement $xmlTemplateObj) {
             sleep(10);
 
             Logger::info('Goes to the function docs: '. $linkHref);
-
             $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$linkHref"));
+
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents(__DIR__ . '/templates/wp_page.html'));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents(__DIR__ . '/templates/wp_page_1.html'));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents(__DIR__ . '/templates/wp_register_taxonomy.html'));
@@ -65,7 +65,7 @@ try {
     $xmlObj = setupEnvironmentAttributes(initXmlObject());
     wpParseDocs($links, $xmlObj);
 }
-catch (\Throwable $e) {
+catch (Throwable $e) {
     Logger::error($e->getMessage() . ', ' . $e->getFile() . ': ' . $e->getLine());
 }
 
@@ -116,7 +116,7 @@ try {
 
 }
 catch (Throwable $e) {
-    Logger::error($e->getMessage() . ' ' . $e->getFile() . ':' . $e->getLine());
+    Logger::error($e->getMessage() .' '. $e->getFile() .':'. $e->getLine());
 }
 
 Logger::info('FINISH!');
@@ -133,10 +133,10 @@ $keyWordsListAfter  = 'Keywords count after : ' . count($normalizedDist);
 /**
  * Parse current listing of functions.
  *
- * @param string $dom
+ * @param string $html
  * @return array of links
  */
-function parseCurrentListingPage($html): array {
+function parseCurrentListingPage(string $html): array {
     try {
         $dom = phpQuery::newDocumentHTML($html);
     } catch(Throwable $e) {
@@ -153,8 +153,8 @@ function parseCurrentListingPage($html): array {
 
     $pageLinks['next_page'][] = $dom->find('.pagination.loop-pagination > .next.page-numbers')->attr('href');
     $dom->unloadDocument();
-
     Logger::info($pageLinks);
+
     return $pageLinks;
 }
 
@@ -164,7 +164,7 @@ function parseCurrentListingPage($html): array {
  * @param string $html
  * @return array
  */
-function parseCurrentFunctionReferencePage($html): array {
+function parseCurrentFunctionReferencePage(string $html): array {
     $dom = phpQuery::newDocumentHTML($html);
     $keyWord = [];
     $paramOptional = 0;

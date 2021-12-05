@@ -8,10 +8,10 @@
  * Remove file contents of `tmp/tmp.xml`
  * Run the parser `php run.php`
  * The result file you can find in here `dist/php.net/php.xml`
- * When the parser will finish it's work copy the result file to `src/php.xml` 
+ * When the parser will finish it's work copy the result file to `src/php.xml`
  * and run `php index.php` to normalize it's content.
  * After that use normalized result in `dist/php.xml`.
- * 
+ *
  * Used PHP 8.0.1 (cli) (built: Jan  5 2021 23:43:39) (ZTS Visual C++ 2019 x64)
  *
 
@@ -20,14 +20,11 @@ php index.php
 
 */
 
-// if you want to see warnings comment next line
-error_reporting(E_ALL ^ E_WARNING);
-
 global $fileTemp;
 global $fileSrc;
 global $xmlTemplate;
 
-$fileDist = BASE_DIR . DIRECTORY_SEPARATOR . 'dist'. DIRECTORY_SEPARATOR . 'php.net' . DIRECTORY_SEPARATOR . 'php.xml';
+$fileDist = BASE_DIR . DIRECTORY_SEPARATOR .'dist'. DIRECTORY_SEPARATOR .'php.net'. DIRECTORY_SEPARATOR .'php.xml';
 
 Logger::info('started');
 
@@ -137,7 +134,7 @@ echo implode(PHP_EOL, $links['function_links']);
 /**
  * Parse current listing of functions.
  *
- * @param string $dom
+ * @param string $html
  * @return array of links
  */
 function parseCurrentListingPage(string $html): array {
@@ -145,7 +142,7 @@ function parseCurrentListingPage(string $html): array {
         $dom = phpQuery::newDocumentHTML($html);
     } catch(Throwable $e) {
         Logger::error(
-            'Can not load the DOM. '. 
+            'Can not load the DOM. '.
             $e->getMessage() .' '. $e->getFile() .':'. $e->getLine()
         );
     }
