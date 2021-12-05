@@ -10,7 +10,7 @@ Clean Notepad++ autocomplete files `*.xml`, by sorting items, removing duplicate
 
 On the right pane you'll see the normalized version of your autocomplete file.
 
-The generated XML file location is `dist/php.xml`
+The generated XML file location `dist/php.xml`
 
 ## Bonus Features
 
