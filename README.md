@@ -38,4 +38,4 @@ To run this parser you will need:
  * When the parser will finish it's work - copy the result file to `src/php.xml` and run `php index.php` to normalize it's content.
  * After that use normalized result in `dist/php.xml`.
 
-Autocomplete Example file (php.xml) you can find <a href="https://github.com/CoreText/WordPress-Auto-complete-for-Notepad-Plus">here</a>
+Autocomplete Example file `php.xml` you can find <a href="https://github.com/CoreText/WordPress-Auto-complete-for-Notepad-Plus">here</a>.
