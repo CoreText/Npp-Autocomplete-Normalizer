@@ -58,7 +58,7 @@ function wpParseDocs(array $links, SimpleXMLElement $xmlTemplateObj) {
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.apcu-store.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/pdo.construct.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/mysqli.construct.html"));
-            pd($keyWordList);
+            // pd($keyWordList);
 
             importArrayToNppXml($keyWordList, $xmlTemplateObj);
 

@@ -1,7 +1,7 @@
 <?php
 
 // if you want to see warnings comment next line
-//error_reporting(E_ALL ^ E_WARNING);
+error_reporting(E_ALL ^ E_WARNING);
 
 require_once(BASE_DIR . '/lib/XmlValidator.php');
 
