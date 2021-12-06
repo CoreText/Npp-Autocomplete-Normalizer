@@ -156,8 +156,7 @@ function parseCurrentListingPage(string $html): array {
         $pq = pq($value);
 
         foreach ($pq->find('li > a') as $listItem => $link) {
-            if (str_contains(trim($link->nodeValue), '__construct'))
-                $pageLinks['function_links'][] = pq($link)->attr('href');
+            $pageLinks['function_links'][] = pq($link)->attr('href');
         }
     }
     // dd($pageLinks['function_links']);
