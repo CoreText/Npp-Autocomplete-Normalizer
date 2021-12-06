@@ -1,7 +1,7 @@
 <?php
 
 // if you want to see warnings comment next line
-error_reporting(E_ALL ^ E_WARNING);
+//error_reporting(E_ALL ^ E_WARNING);
 
 require_once(BASE_DIR . '/lib/XmlValidator.php');
 
@@ -211,6 +211,7 @@ function importArrayToNppXml(array $keyWordList, SimpleXMLElement $xml): string 
     }
 
     $xmlValidator = new XmlValidator();
+
     if (file_exists($fileTemp)) {
         try {
             $xml = new SimpleXMLElement(file_get_contents($fileTemp));
@@ -307,7 +308,6 @@ function importArrayToNppXml(array $keyWordList, SimpleXMLElement $xml): string 
  * @return string
  */
 function replaceXmlEntities(string $str): string {
-
     $replacements = [
         /*Decimal => Hexadecimal that Npp understand*/
         '&#9;'    => '&#x09;', // CHARACTER TABULATION
@@ -321,9 +321,6 @@ function replaceXmlEntities(string $str): string {
     // replace entities
     $text = str_replace(array_keys($replacements), $replacements, $str);
 
-    // replace quotes
-    $text = str_replace(['“', '”',], '&quot;', $text);
-
     // and normalize spaces in the end
     return preg_replace('/(&#x20;)+/', '&#x20;', $text);
 }
@@ -335,8 +332,33 @@ function replaceXmlEntities(string $str): string {
  * @return string
  */
 function replaceAmp(string $text): string {
-    $text = str_replace('&amp;amp;', '&amp;', $text);
-    return str_replace('&amp;#x', '&#x', $text);
+    $unescapeGibberish = [
+        '&amp;amp;'  => '&amp;',
+        '&amp;quot;' => '&quot;',
+        '&amp;lt;'   => '&lt;',
+        '&amp;gt;'   => '&gt;',
+        '&amp;#x'    => '&#x',
+    ];
+
+    return str_replace(array_keys($unescapeGibberish), $unescapeGibberish, $text);
+}
+
+/**
+ * Escape ampersand symbol of param.
+ *
+ * @param $text
+ * @return string
+ */
+function escapeParam(string $text): string {
+    $escapes = [
+        '&' => '&amp;',
+        '<' => '&lt;',
+        '>' => '&gt;',
+        '"' => '&quot;',
+        '“' => '&quot;',
+        '”' => '&quot;',
+    ];
+    return str_replace(array_keys($escapes), $escapes, $text);
 }
 
 /**
@@ -346,8 +368,6 @@ function replaceAmp(string $text): string {
  * @return string
  */
 function removeUnwanted(string $text): string {
-    $text = str_replace(' = ', '=', $text);
-
     return str_replace([
         ' descr=""',
         '<KeyWord name=""/>',
@@ -544,7 +564,14 @@ function isValidMessage($isValidXml) {
         return '<h1 class="special-header cb-red" id="special-header">The XML is not valid!<br><pre>' . print_r($isValidXml, true) . '</pre></h1>';
 }
 
-function escapeXmlForBrowser($xml, $htmlFormat = false) {
+/**
+ * Escape the XML.
+ *
+ * @param $xml
+ * @param $htmlFormat
+ * @return string
+ */
+function escapeXmlForBrowser(string $xml, bool $htmlFormat = false): string {
     if ($htmlFormat)
         return '<pre>' . htmlspecialchars($xml) . '</pre>';
 
@@ -650,18 +677,25 @@ function getTheWord(string $text): string {
     return $text;
 }
 
-function normalizeText($text, $with = " ") {
-    $text = trim(str_replace(['Function:', 'Default value:'], $with, $text));
-    $text = preg_replace('/\s+/', ' ', $text);
-    $text = preg_replace('/(&nbsp;| )+/', ' ', $text);
-    $text = str_replace(' ,', ',', $text);
-    $text = str_replace(' .', '.', $text);
+function normalizeText($text, $with = ' ') {
+    $unwanted = [
+        'Function:'      => $with,
+        'Default value:' => $with,
+        ' ,'             => ',',
+        ' .'             => '.',
+        ' = '            => '=',
+    ];
 
-    return trim(normalizeNewLines($text));
+    $text = trim(str_replace(array_keys($unwanted), $unwanted, $text));
+
+    // non-breaking space entity, or it's char, or space
+    $text = preg_replace("/(&nbsp;| |\s)+/", $with, $text);
+
+    return normalizeNewLines($text);
 }
 
 function normalizeSpaceEntities($text, $with = '&#x20;') {
-    return str_replace("(&#x20;)+", $with, $text);
+    return preg_replace("/(&#x20;)+/", $with, $text);
 }
 
 function normalizeNewLines($text) {
@@ -673,7 +707,8 @@ function removeDuplicateNewLines($text) {
 }
 
 function replaceUnwantedChars($text, $with = '') {
-    return trim(str_replace(['(', ')'], $with, $text));
+    $unwantedChars = ['(', ')'];
+    return trim(str_replace($unwantedChars, $with, $text));
 }
 
 function formatStringLength($text, $tabs = '', $length = 100) {
@@ -688,28 +723,54 @@ function trimLeadingSpaces(string $text, $with = ''): string {
     return preg_replace("/^[ \t]+/m", $with, $text);
 }
 
+function trimAllSpaces(string $text, $with = ''): string {
+    return trimTrailingSpaces(trimLeadingSpaces($text, $with), $with);
+}
+
+function removeAssignSpaces(string $text): string {
+    return str_replace(' = ', '=', $text);
+}
+
+/**
+ * Replace string with associative array, where
+ * key is string to find => value is string replacement.
+ *
+ * @param array $replacements
+ * @param string $subject
+ * @return string
+ */
+function strReplaceAssoc(array $replacements, string $subject): string {
+   return str_replace(array_keys($replacements), array_values($replacements), $subject);
+}
+
 /**
  * Replace first string occurrence.
  *
  * @param string $str
  * @param string $findStr
  * @param string $replaceWith
- * @param string $sanitizeStr  clean string after replacements
- * @param string $sanitizeStrWith  clean string after replacements with string
+ * @param string|array $sanitizeStr  clean string after replacements
+ * @param string $sanitizeStrWith    clean string after replacements with string
  * @return string
  */
 function replaceFirstMatch(
     string $str,
     string $findStr,
     string $replaceWith = '',
-    string $sanitizeStr = '',
-    string $sanitizeStrWith = ''
+    $sanitizeStr = '',
+    string $sanitizeStrWith = '',
+    string $sanitizeRegEx = '',
+    int $sanitizeRegExLimit = -1
     ): string {
     $pos = strpos($str, $findStr);
 
     if ($pos !== false) {
         $str = substr_replace($str, $replaceWith, $pos, strlen($findStr));
         $str = str_replace($sanitizeStr, $sanitizeStrWith, $str);
+
+        if ($sanitizeRegEx) {
+            $str = preg_replace($sanitizeRegEx, $sanitizeStrWith, $str, $sanitizeRegExLimit);
+        }
     }
 
     return $str;
@@ -751,30 +812,96 @@ function uniqueNumericKey(int $min = 5, int $max = 20, int $quantity = 5): int {
     return (int)implode('', uniqueRandomNumbersWithinRange($min, $max, $quantity));
 }
 
-/**
- * Escape ampersand symbol of param.
- *
- * @param $text
- * @return string
- */
-function escapeParamAmps(string $text): string {
-    return str_replace('&', '&amp;', $text);
-}
-
 ////////////////////////////////////////////////////////////////////////// Misc
 
 /**
  * Dump and die.
  *
  * @param $var
+ * @param $html
  * @param $die
- * @return mixed
+ * @return string
  */
-function dd($var, $die = true) {
-    echo '<pre>';
-    // var_dump($var);
-    print_r($var);
-    echo '</pre>';
+function dd($var, $html = true, $die = true) {
+    static $count = 1;
 
-    if ($die) die();
+    if ($html)
+        print("\n<pre>\n");
+    else
+        print(PHP_EOL);
+
+    var_dump($var);
+
+    if ($html)
+        print("\n</pre>\n");
+    else
+        print(PHP_EOL);
+
+    if (is_bool($die) && $die)
+        die();
+
+    if (is_numeric($die)) {
+        if ($die === $count)
+            die("\n\nDUMP TIMES: $count\n");
+
+        $count++;
+    }
+}
+
+/**
+ * Print and die.
+ *
+ * @param $var
+ * @param $html
+ * @param $die
+ * @return string
+ */
+function pd($var, $html = true, $die = true) {
+    static $count = 1;
+
+    if ($html)
+        print("\n<pre>\n");
+    else
+        print(PHP_EOL);
+
+    print_r($var);
+
+    if ($html)
+        print("\n</pre>\n");
+    else
+        print(PHP_EOL);
+
+    if (is_bool($die) && $die)
+        die();
+
+    if (is_numeric($die)) {
+        if ($die === $count)
+            die("\n\nPRINT TIMES: $count\n");
+
+        $count++;
+    }
+}
+
+/**
+ * Dump the data using dd()
+ *
+ * @param $var
+ * @param $html
+ * @param $die
+ * @return string
+ */
+function dump($var, $html = true, $die = false) {
+    return dd($var, $html, $die);
+}
+
+/**
+ * Print the data using pd()
+ *
+ * @param $var
+ * @param $html
+ * @param $die
+ * @return string
+ */
+function printer($var, $html = true, $die = false) {
+    return dd($var, $html, $die);
 }

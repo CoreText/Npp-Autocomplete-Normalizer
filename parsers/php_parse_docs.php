@@ -56,6 +56,9 @@ function wpParseDocs(array $links, SimpleXMLElement $xmlTemplateObj) {
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/mysqli.affected-rows.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.str-replace.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.apcu-store.html"));
+            // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/pdo.construct.html"));
+            // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/mysqli.construct.html"));
+            pd($keyWordList);
 
             importArrayToNppXml($keyWordList, $xmlTemplateObj);
 
@@ -153,9 +156,11 @@ function parseCurrentListingPage(string $html): array {
         $pq = pq($value);
 
         foreach ($pq->find('li > a') as $listItem => $link) {
-            $pageLinks['function_links'][] = pq($link)->attr('href');
+            if (str_contains(trim($link->nodeValue), '__construct'))
+                $pageLinks['function_links'][] = pq($link)->attr('href');
         }
     }
+    // dd($pageLinks['function_links']);
 
     $dom->unloadDocument();
     Logger::info($pageLinks);
@@ -188,24 +193,42 @@ function parseCurrentFunctionReferencePage(string $html): array {
         $keyWord['KeyWord']['@attributes']['name'] = $keywords[1];
         $keyWord = getKeyWordStructure($keyWord, $dom);
 
-        // to avoid key collisions in $keyWordList when generating the XML
-        $theKey = uniqueNumericKey();
 
-        if (str_contains($keywords[0], '$')) {
-            $keyWord[$theKey]['@attributes']['name'] = $keywords[0];
-            $keyWord[$theKey]['@attributes']['func'] = 'no';
-
+        foreach ($keywords as $kw) {
+            // to avoid key collisions in $keyWordList when generating the XML
             $theKey = uniqueNumericKey();
-            $keyWord[$theKey]['@attributes']['name'] = getTheWord(str_replace('$', '', $keywords[0]));
-            $keyWord[$theKey]['@attributes']['func'] = 'no';
-        } else {
-            $keyWord[$theKey]['@attributes']['name'] = $keywords[0];
-            $keyWord[$theKey]['@attributes']['func'] = 'yes';
+
+            if (str_contains($kw, '$')) {
+                $keyWord[$theKey]['@attributes']['name'] = $kw;
+                $keyWord[$theKey]['@attributes']['func'] = 'no';
+
+                $keyWord[$theKey]['@attributes']['name'] = getTheWord(str_replace('$', '', $kw));
+                $keyWord[$theKey]['@attributes']['func'] = 'no';
+            } else {
+                $keyWord[$theKey]['@attributes']['name'] = $kw;
+                $keyWord[$theKey]['@attributes']['func'] = 'yes';
+            }
+
+            if ($keyWord[$theKey]['@attributes']['func'] === 'no')
+                continue;
+
+
+            if (str_contains($kw, '::__construct')) {
+                $keyWord[$theKey]['@attributes']['name'] = $kw = str_replace('::__construct', '', $kw);
+            }
+
+            $keyWord[$theKey]['@attributes']['name'] = $kw;
+
+            if (isset($keyWord['KeyWord']['Overload']))
+                $keyWord[$theKey]['Overload'] = $keyWord['KeyWord']['Overload'];
+
+            if (str_contains($keyWord[$theKey]['@attributes']['name'], '::')) {
+                $keyWord[$theKey]['@attributes']['name'] = getTheWord($kw);
+                $keyWord[$theKey]['@attributes']['func'] = 'no';
+                unset($keyWord[$theKey]['Overload']);
+            }
         }
 
-        if ($keyWord[$theKey]['@attributes']['func'] === 'yes' && isset($keyWord['KeyWord']['Overload'])) {
-            $keyWord[$theKey]['Overload'] = $keyWord['KeyWord']['Overload'];
-        }
     } else {
         $keyWord['KeyWord']['@attributes']['name'] = trim($dom->find('h1.refname')->text());
         $keyWord = getKeyWordStructure($keyWord, $dom);
@@ -230,6 +253,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
     $paramOptionalCount = 0;
     $multiMethodSynopsis = false;
     $hasInterfaceMethod = false;
+    $constructor = false;
 
     // offset, to show the docs on the second slide of the tooltip.
     $offset = 1;
@@ -249,6 +273,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
                 $keyWord['KeyWord']['@attributes']['name'] = $entries[0];
                 $keyWord['KeyWord']['Overload'][0]['@attributes']['retVal'] = 'self';
                 $keyWord['KeyWord']['Overload'][1]['@attributes']['retVal'] = 'self';
+                $constructor = true;
             } else {
                 //$keyWord['KeyWord']['@attributes']['name'] = $entries[1];
                 //$offset = uniqueNumericKey();
@@ -277,6 +302,9 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $currentRetVal = trim($pq->find(' > span.type')->text());
 
         // return value
+        if (!$constructor && $currentRetVal === '')
+            continue;
+
         $retVal[] = $currentRetVal;
         if ($multiMethodSynopsis) {
             $keyWord['KeyWord']['Overload'][$key + $offset + 1]['@attributes']['retVal'] = $currentRetVal;
@@ -298,12 +326,14 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
                 $paramOptionalText .= str_pad('', $paramOptionalCount, ']');
             }
 
-            $pText = (($paramOptionalText === '')? $paramText : $paramOptionalText);
+            $pText = removeAssignSpaces(escapeParam(trim((($paramOptionalText === '')? $paramText : $paramOptionalText))));
+
+            // dd($pText, 0, 15);
 
             if ($multiMethodSynopsis) {
-                $keyWord['KeyWord']['Overload'][$key + $offset + 1]['Param'][$paramKey]['@attributes']['name'] = escapeParamAmps($pText);
+                $keyWord['KeyWord']['Overload'][$key + $offset + 1]['Param'][$paramKey]['@attributes']['name'] = $pText;
             } else {
-                $keyWord['KeyWord']['Overload'][0]['Param'][$paramKey]['@attributes']['name'] = escapeParamAmps($pText);
+                $keyWord['KeyWord']['Overload'][0]['Param'][$paramKey]['@attributes']['name'] = $pText;
             }
 
             $paramTypes[$paramKey][] = $pText;
@@ -312,7 +342,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $paramOptionalCount = 0;
     }
 
-    $returnVals = implode('|', $retVal);
+    $returnVals = implode('|', array_filter($retVal));
 
     $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] = '';
 
@@ -323,7 +353,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
     //    $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] = formatStringLength('&#x0A;' . normalizeText($dom->find('.refpurpose .dc-title')->text()), '&#x09;');
     //
     //    foreach ($paramTypes as $paramTypesKey => $paramTypesVal) {
-    //        $keyWord['KeyWord']['Overload'][$offset]['Param'][$paramTypesKey]['@attributes']['name'] = escapeParamAmps(normalizeParamEntries($paramTypesVal));
+    //        $keyWord['KeyWord']['Overload'][$offset]['Param'][$paramTypesKey]['@attributes']['name'] = escapeParam(cleanParamEntries($paramTypesVal));
     //    }
     //} else {
         $keyWord['KeyWord']['Overload'][0]['@attributes']['retVal'] .= $returnVals;
@@ -333,7 +363,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] = formatStringLength('&#x0A;' . normalizeText($dom->find('.refpurpose .dc-title')->text()), '&#x09;');
 
         foreach ($paramTypes as $paramTypesKey => $paramTypesVal) {
-            $keyWord['KeyWord']['Overload'][$offset]['Param'][$paramTypesKey]['@attributes']['name'] = escapeParamAmps(normalizeParamEntries($paramTypesVal));
+            $keyWord['KeyWord']['Overload'][$offset]['Param'][$paramTypesKey]['@attributes']['name'] = cleanParamEntries($paramTypesVal);
         }
     //}
 
@@ -347,7 +377,10 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
 
     foreach ($dom->find('div.refsect1.parameters > dl > dt') as $paramKey => $paramVal) {
         $pqParam = pq($paramVal);
+
         $p = trim($pqParam->find('> .parameter')->text());
+        $p = (empty($p))? trim(strip_tags($paramVal->nodeValue)) : $p;
+
         $pDescr = formatStringLength(normalizeText($pqParam->next()->find('.para')->text()), '&#x09;');
         $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] .= '&#x0A;&#x0A;$'. $p . '&#x0A;&#x09;' . $pDescr;
     }
@@ -368,14 +401,16 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $keyWord['KeyWord']['Overload'][1]['@attributes']['retVal'] = 'void';
     }
 
+    if (is_array($keyWord['KeyWord']['Overload']) && count($keyWord['KeyWord']['Overload']) > 1) {
+        $keyWord['KeyWord']['Overload'] = array_values($keyWord['KeyWord']['Overload']);
+    }
+
     // fix first slide of hint for multi-method synopsis page reference
     if (isset($keyWord['KeyWord']['Overload'][1]['Param']) && !isset($keyWord['KeyWord']['Overload'][0]['Param'])) {
         $keyWord['KeyWord']['Overload'][0]['Param'] = $keyWord['KeyWord']['Overload'][1]['Param'];
     }
 
-    if (is_array($keyWord['KeyWord']['Overload']) && count($keyWord['KeyWord']['Overload']) > 2) {
-        $keyWord['KeyWord']['Overload'] = array_values($keyWord['KeyWord']['Overload']);
-    }
+
 
     return $keyWord;
 }
@@ -386,8 +421,8 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
  * @param array $paramTypesValues
  * @return string
  */
-function normalizeParamEntries(array $paramTypesValues): string {
-    $currentParamName = implode('|', $paramTypesValues);
+function cleanParamEntries(array $paramTypesValues): string {
+    $currentParamName = implode('|', array_filter($paramTypesValues));
     $currentParamName = str_replace([
             ']|[ ',
             ']|'  ,
@@ -412,10 +447,22 @@ function normalizeParamEntries(array $paramTypesValues): string {
  */
 function uniqueParamType(string $paramType): string {
     $paramString = trim(preg_replace("/[\[\]]/", '', $paramType));
-    $entries = explode('|', $paramString);
+    $entries = array_filter(explode('|', $paramString));
 
     if (isset($entries[0]) && arrayHasDuplicates($entries)) {
-        $paramType = replaceFirstMatch($paramType, $entries[0], '', '[ |', '[ ');
+        $paramType = replaceFirstMatch(
+            $paramType,         // input string
+            $entries[0],        // first param to replace
+            '',                 // replace with
+
+            ///////////////////////////////////////////////////// After Replace
+            [
+                '[ |',          // remove optional sign with or operator
+                '[ [ ',         // if optional param was previous
+            ],
+            '[ ',               // replace with single starting optional sign
+            "/\[ \]+\|/",       // remove the rest ending optional sign
+        );
     }
 
     return $paramType;

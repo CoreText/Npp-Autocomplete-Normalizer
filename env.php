@@ -21,6 +21,7 @@ $xmlTemplate = <<<XML_RENDER
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
 Generated AutoComplete for Notepad++
+Docs https://npp-user-manual.org/docs/auto-completion/
 @author Texter CoreText - https://github.com/CoreText/Npp-Autocomplete-Normalizer
 @version 1.1
 -->
