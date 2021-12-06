@@ -17,7 +17,6 @@
 
 php run.php
 php index.php
-
 */
 
 global $fileTemp;
@@ -55,6 +54,7 @@ function wpParseDocs(array $links, SimpleXMLElement $xmlTemplateObj) {
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/norewinditerator.next.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/mysqli.affected-rows.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.str-replace.html"));
+            // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.apcu-store.html"));
 
             importArrayToNppXml($keyWordList, $xmlTemplateObj);
 
@@ -348,7 +348,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $pqParam = pq($paramVal);
         $p = trim($pqParam->find('> .parameter')->text());
         $pDescr = formatStringLength(normalizeText($pqParam->next()->find('.para')->text()), '&#x09;');
-        $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] .= '&#x0A;&#x0A;'. $p . '&#x0A;&#x09;' . $pDescr;
+        $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] .= '&#x0A;&#x0A;$'. $p . '&#x0A;&#x09;' . $pDescr;
     }
 
     $returns = trim($dom->find('.returnvalues > .para')->text());
@@ -365,6 +365,11 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
     if (/* !$hasInterfaceMethod && */ $returns === 'No value is returned.' || $keyWord['KeyWord']['Overload'][0]['@attributes']['retVal'] === '') {
         $keyWord['KeyWord']['Overload'][0]['@attributes']['retVal'] = 'void';
         $keyWord['KeyWord']['Overload'][1]['@attributes']['retVal'] = 'void';
+    }
+
+    // fix first slide of hit for multi-method synopsis page reference
+    if (isset($keyWord['KeyWord']['Overload'][1]['Param']) && !isset($keyWord['KeyWord']['Overload'][0]['Param'])) {
+        $keyWord['KeyWord']['Overload'][0]['Param'] = $keyWord['KeyWord']['Overload'][1]['Param'];
     }
 
     if (is_array($keyWord['KeyWord']['Overload']) && count($keyWord['KeyWord']['Overload']) > 2) {
