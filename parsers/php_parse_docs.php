@@ -52,6 +52,7 @@ function wpParseDocs(array $links, SimpleXMLElement $xmlTemplateObj) {
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.array-slice.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.next.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/norewinditerator.next.html"));
+            // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/norewinditerator.construct.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/mysqli.affected-rows.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.str-replace.html"));
             // $keyWordList = parseCurrentFunctionReferencePage(file_get_contents("$baseUrl/function.apcu-store.html"));
@@ -266,11 +267,11 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
 
     $keyWord['KeyWord']['@attributes']['func'] = 'yes';
 
-    if ($dom->find('.methodsynopsis.dc-description')->count() > 1) {
+    if ($dom->find('.methodsynopsis.dc-description, .constructorsynopsis.dc-description')->count() > 1) {
         $multiMethodSynopsis = true;
     }
 
-    foreach ($dom->find('.methodsynopsis.dc-description') as $key => $value) {
+    foreach ($dom->find('.methodsynopsis.dc-description, .constructorsynopsis.dc-description') as $key => $value) {
         $pq = pq($value);
 
         $currentRetVal = trim($pq->find(' > span.type')->text());
