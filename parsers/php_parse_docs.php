@@ -367,7 +367,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $keyWord['KeyWord']['Overload'][1]['@attributes']['retVal'] = 'void';
     }
 
-    // fix first slide of hit for multi-method synopsis page reference
+    // fix first slide of hint for multi-method synopsis page reference
     if (isset($keyWord['KeyWord']['Overload'][1]['Param']) && !isset($keyWord['KeyWord']['Overload'][0]['Param'])) {
         $keyWord['KeyWord']['Overload'][0]['Param'] = $keyWord['KeyWord']['Overload'][1]['Param'];
     }
