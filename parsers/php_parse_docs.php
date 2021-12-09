@@ -338,7 +338,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
         $paramOptionalCount = 0;
     }
 
-    $returnVals = implode('|', array_filter($retVal));
+    $returnVals = implode('|', array_unique(array_filter($retVal)));
 
     $keyWord['KeyWord']['Overload'][$offset]['@attributes']['descr'] = '';
 
@@ -418,7 +418,7 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
  * @return string
  */
 function cleanParamEntries(array $paramTypesValues): string {
-    $currentParamName = implode('|', array_filter($paramTypesValues));
+    $currentParamName = implode('|', array_unique(array_filter($paramTypesValues)));
     $currentParamName = str_replace([
             ']|[ ',
             ']|'  ,
@@ -443,7 +443,7 @@ function cleanParamEntries(array $paramTypesValues): string {
  */
 function uniqueParamType(string $paramType): string {
     $paramString = trim(preg_replace("/[\[\]]/", '', $paramType));
-    $entries = array_filter(explode('|', $paramString));
+    $entries = array_unique(array_filter(explode('|', $paramString)));
 
     if (isset($entries[0]) && arrayHasDuplicates($entries)) {
         $paramType = replaceFirstMatch(
