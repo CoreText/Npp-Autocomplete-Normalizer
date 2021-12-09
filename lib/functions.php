@@ -309,7 +309,7 @@ function importArrayToNppXml(array $keyWordList, SimpleXMLElement $xml): string 
  */
 function replaceXmlEntities(string $str): string {
     $replacements = [
-        /*Decimal => Hexadecimal that Npp understand*/
+        /*Decimal => Hexadecimal that Npp understands*/
         '&#9;'    => '&#x09;', // CHARACTER TABULATION
         '&#10;'   => '&#x0A;', // LINE FEED (LF)
         '&#13;'   => '&#x0D;', // CARRIAGE RETURN (CR)
@@ -344,7 +344,7 @@ function replaceAmp(string $text): string {
 }
 
 /**
- * Escape ampersand symbol of param.
+ * Escape special chars of param.
  *
  * @param $text
  * @return string
@@ -613,8 +613,6 @@ function includeWithVariables($filePath, $variables = [], $print = true) {
     return $output;
 }
 
-//////////////////////////////////////////////////////////////////////////
-
 /**
  * Init the XML document.
  *
@@ -623,8 +621,6 @@ function includeWithVariables($filePath, $variables = [], $print = true) {
 function initXmlObject(): SimpleXMLElement {
     global $fileTemp;
     global $xmlTemplate;
-
-    //$fp = fopen($fileTemp, 'w+'); fclose($fp);
 
     if (file_exists($fileTemp)) {
         $fileContents = file_get_contents($fileTemp);
@@ -637,6 +633,12 @@ function initXmlObject(): SimpleXMLElement {
     return parseEnvironmentAttributes(new SimpleXMLElement($xmlTemplate));
 }
 
+/**
+ * Parse the Environment tag attributes.
+ *
+ * @param SimpleXMLElement $xml
+ * @return SimpleXMLElement
+ */
 function parseEnvironmentAttributes(SimpleXMLElement $xml): SimpleXMLElement {
     global $autoCompleteEnvironmentAttributes;
     $autoCompleteEnvironment = $xml->xpath('/NotepadPlus/AutoComplete/Environment');
@@ -650,6 +652,12 @@ function parseEnvironmentAttributes(SimpleXMLElement $xml): SimpleXMLElement {
     return $xml;
 }
 
+/**
+ * Setup the Environment tag attributes.
+ *
+ * @param SimpleXMLElement $xmlData
+ * @return SimpleXMLElement
+ */
 function setupEnvironmentAttributes(SimpleXMLElement $xmlData): SimpleXMLElement {
     global $autoCompleteEnvironmentAttributes;
 
@@ -666,10 +674,22 @@ function setupEnvironmentAttributes(SimpleXMLElement $xmlData): SimpleXMLElement
     return $xmlData;
 }
 
+/**
+ * Extract the function name from signature.
+ *
+ * @param string $text
+ * @return string
+ */
 function getTheKeyWordName(string $text): string {
     return substr($text, 0, strpos($text, '('));
 }
 
+/**
+ * Extract the method name from signature.
+ *
+ * @param string $text
+ * @return string
+ */
 function getTheWord(string $text): string {
     if (($arr = explode('::', $text)) && ($next = next($arr))) {
         return $next;
@@ -677,6 +697,12 @@ function getTheWord(string $text): string {
     return $text;
 }
 
+/**
+ * Remove unwanted spaces and words.
+ *
+ * @param $text
+ * @return string
+ */
 function normalizeText($text, $with = ' ') {
     $unwanted = [
         'Function:'      => $with,
@@ -814,7 +840,7 @@ function uniqueNumericKey(int $min = 5, int $max = 20, int $quantity = 5): int {
 
 /**
  * Reset files before parsing.
- * 
+ *
  * @return void
  */
 function newParse(): void {
@@ -894,7 +920,7 @@ function pd($var, $html = true, $die = true) {
 }
 
 /**
- * Dump the data using dd()
+ * Dump the data using dd().
  *
  * @param $var
  * @param $html
@@ -906,7 +932,7 @@ function dump($var, $html = true, $die = false) {
 }
 
 /**
- * Print the data using pd()
+ * Print the data using pd().
  *
  * @param $var
  * @param $html
