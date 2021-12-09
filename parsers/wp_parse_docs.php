@@ -1,10 +1,8 @@
 <?php
 
-/**
-
+/*
 php run.php
 php index.php
-
 */
 
 global $fileTemp;
@@ -72,7 +70,7 @@ catch (Throwable $e) {
 
 ///////////////////////////////////////////////////////////////////// FINISH
 phpQuery::unloadDocuments();
-Logger::info('Finished the DOM parsing! Processing The XML files!');
+Logger::info('Finished the DOM parsing! Processing the XML files!');
 
 /*
 php run.php

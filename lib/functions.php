@@ -8,8 +8,6 @@ require_once(BASE_DIR . '/lib/XmlValidator.php');
 global $autoCompleteEnvironmentAttributes;
 
 /**
- * function xml2array
- *
  * This function is part of the PHP manual.
  *
  * The PHP manual text and comments are covered by the Creative Commons
@@ -204,10 +202,10 @@ function importArrayToNppXml(array $keyWordList, SimpleXMLElement $xml): string 
     global $fileTemp;
 
     if (empty($keyWordList)) {
-        Logger::error('No keyWord to import!');
+        Logger::error('No KeyWord to import!');
     }
     if (empty($xml)) {
-        Logger::error('Nowehere to import!');
+        Logger::error('Nowhere to import!');
     }
 
     $xmlValidator = new XmlValidator();

@@ -80,7 +80,7 @@ catch (Throwable $e) {
 
 ///////////////////////////////////////////////////////////////////////// PARSED
 phpQuery::unloadDocuments();
-Logger::info('Finished the DOM parsing! Processing The XML files!');
+Logger::info('Finished the DOM parsing! Processing the XML files!');
 
 
 if (!file_exists($fileTemp)) {
