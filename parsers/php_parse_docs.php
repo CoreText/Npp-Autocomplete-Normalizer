@@ -159,7 +159,6 @@ function parseCurrentListingPage(string $html): array {
             $pageLinks['function_links'][] = pq($link)->attr('href');
         }
     }
-    // dd($pageLinks['function_links']);
 
     $dom->unloadDocument();
     Logger::info($pageLinks);
@@ -326,8 +325,6 @@ function getKeyWordStructure(array $keyWord, phpQueryObject &$dom): array {
             }
 
             $pText = removeAssignSpaces(escapeParam(trim((($paramOptionalText === '')? $paramText : $paramOptionalText))));
-
-            // dd($pText, 0, 15);
 
             if ($multiMethodSynopsis) {
                 $keyWord['KeyWord']['Overload'][$key + $offset + 1]['Param'][$paramKey]['@attributes']['name'] = $pText;
