@@ -175,7 +175,7 @@ function simplexmlImportXml(SimpleXMLElement $parent, $xml, $before = false) {
     $xml = (string)$xml;
 
     // check if there is something to add
-    if ($nodata = !strlen($xml) or $parent[0] == NULL) {
+    if ($nodata = !strlen($xml) or $parent[0] == null) {
         return $nodata;
     }
 
@@ -579,7 +579,7 @@ function escapeXmlForBrowser(string $xml, bool $htmlFormat = false): string {
 }
 
 /**
- * Pass vars to some php include.
+ * Pass variables to some php include.
  *
  * @param $filePath
  * @param $variables
@@ -587,7 +587,7 @@ function escapeXmlForBrowser(string $xml, bool $htmlFormat = false): string {
  * @return mixed
  */
 function includeWithVariables($filePath, $variables = [], $print = true) {
-    $output = NULL;
+    $output = null;
 
     if (file_exists($filePath)) {
         // Extract the variables to a local namespace
@@ -810,6 +810,17 @@ function uniqueRandomNumbersWithinRange(int $min = 5, int $max = 20, int $quanti
  */
 function uniqueNumericKey(int $min = 5, int $max = 20, int $quantity = 5): int {
     return (int)implode('', uniqueRandomNumbersWithinRange($min, $max, $quantity));
+}
+
+/**
+ * Reset files before parsing.
+ * 
+ * @return void
+ */
+function newParse(): void {
+    global $fileTemp;
+    $fp = fopen($fileTemp, 'w+'); fclose($fp);
+    $fp = fopen(BASE_DIR . '/logs/logging.log', 'w+'); fclose($fp);
 }
 
 ////////////////////////////////////////////////////////////////////////// Misc
