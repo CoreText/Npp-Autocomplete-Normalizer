@@ -104,15 +104,15 @@ function array2xml($data, &$xmlData) {
                         }
                     }
                 }
-                else {
-                    if ($overloadKey !== '@attributes' && $overloadKey !== 'Param') {
-                        $overload = $xmlData->addChild('Overload');
-                        foreach ($data['Overload'] as $overloadKey => $overloadVal) {
-                            $overload->attributes()->retVal = (string)$overloadVal->attributes()->retVal;
-                            $overload->attributes()->descr = (string)$overloadVal->attributes()->descr;
-                        }
-                    }
-                }
+                //else {
+                //    if ($overloadKey !== '@attributes' && $overloadKey !== 'Param') {
+                //        $overload = $xmlData->addChild('Overload');
+                //        foreach ($data['Overload'] as $overloadKey => $overloadVal) {
+                //            $overload->attributes()->retVal = (string)$overloadVal->attributes()->retVal;
+                //            $overload->attributes()->descr = (string)$overloadVal->attributes()->descr;
+                //        }
+                //    }
+                //}
             }
 
             array2xml($value, $subnode);
